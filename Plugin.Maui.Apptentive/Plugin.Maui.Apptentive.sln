@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Maui.Apptentive", "Plugin.Maui.Apptentive.csproj", "{AD678016-E0B9-4EF8-90C3-D8BE22DA374D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveKit.iOS", "..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj", "{22178E63-67B9-46F5-AD00-4A423779E1C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD678016-E0B9-4EF8-90C3-D8BE22DA374D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD678016-E0B9-4EF8-90C3-D8BE22DA374D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD678016-E0B9-4EF8-90C3-D8BE22DA374D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD678016-E0B9-4EF8-90C3-D8BE22DA374D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC83B7C7-1CCD-4A64-9885-87E65E518C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC83B7C7-1CCD-4A64-9885-87E65E518C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC83B7C7-1CCD-4A64-9885-87E65E518C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC83B7C7-1CCD-4A64-9885-87E65E518C45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22178E63-67B9-46F5-AD00-4A423779E1C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22178E63-67B9-46F5-AD00-4A423779E1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22178E63-67B9-46F5-AD00-4A423779E1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22178E63-67B9-46F5-AD00-4A423779E1C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {358DF117-CDA3-43ED-9E70-F80839365821}
+	EndGlobalSection
+EndGlobal
