@@ -1,4 +1,6 @@
-﻿namespace Plugin.Maui.Apptentive.Sample;
+﻿using Plugin.Maui.Apptentive;
+
+namespace Plugin.Maui.Apptentive.Sample;
 
 public partial class MainPage : ContentPage
 {
@@ -13,7 +15,14 @@ public partial class MainPage : ContentPage
 	{
 		Console.Write("Clicked engage button with");
 		Console.WriteLine(EngageEntry.Text);
+
+		Apptentive.Default.Engage(EngageEntry.Text);
     }
+
+	private void OnMessageCenterClicked(object sender, EventArgs e)
+	{
+		Apptentive.Default.PresentMessageCenter();
+	}
 }
 
 
