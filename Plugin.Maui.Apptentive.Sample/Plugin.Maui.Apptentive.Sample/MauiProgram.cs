@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.Maui.Apptentive;
 
 namespace Plugin.Maui.Apptentive.Sample;
 
@@ -18,6 +19,13 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+
+		builder.Services.AddSingleton<IApptentive>(Apptentive.Default);
+
+		var Configuration = new ApptentiveConfiguration("IOS-XAMARIN-IOS-8f46ccae63c0", "1bb31ba70317f17edcad284047483dfa");
+		Configuration.LogLevel = ApptentiveLogLevel.Verbose;
+		Configuration.ShouldSanitizeLogMessages = false;
+		Apptentive.Default.Register(Configuration, null);
 
 		return builder.Build();
 	}

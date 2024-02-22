@@ -17,4 +17,8 @@ partial class ApptentiveImplementation: IApptentive
     public void Engage(string Event) {
         ApptentiveIOS.Shared.Engage(Event, null);
     }
+
+    public void PresentMessageCenter() {
+        ApptentiveIOS.Shared.PresentMessageCenter(null);
+    }
 }

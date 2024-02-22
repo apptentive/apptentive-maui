@@ -20,7 +20,6 @@
                 <Entry
                     x:Name="EngageEntry"
                     MaxLength="20"
-                    Style="{StaticResource CommonEntryStyle}"
                     Placeholder="Where Event"
                     />
 
@@ -30,8 +29,15 @@
                     SemanticProperties.Hint="Engages the specified Where event"
                     Clicked="OnEngageClicked"
                     />
-
             </HorizontalStackLayout>
+
+            <Button
+                x:Name="MessageCenterBtn"
+                Text="Message Center"
+                SemanticProperties.Hint="Opens Message Center"
+                Clicked="OnMessageCenterClicked"
+                />
+
         </VerticalStackLayout>
     </ScrollView>
 
