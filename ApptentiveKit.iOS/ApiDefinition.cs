@@ -46,6 +46,10 @@ namespace ApptentiveKit.iOS
 		[Export("queryCanShowInteractionForEvent:completion:")]
 		void QueryCanShowInteraction(string @event, Action<bool> completion);
 
+		// - (void)queryCanShowMessageCenterWithCompletion:(void (^ _Nonnull)(BOOL))completion SWIFT_DEPRECATED_MSG("This feature is not implemented and will always result in false.");
+		[Export("queryCanShowMessageCenterWithCompletion:")]
+		void QueryCanShowMessageCenter(Action<bool> completion);
+
 		// -(void)presentMessageCenterFromViewController:(UIViewController * _Nullable)viewController;
 		[Export("presentMessageCenterFromViewController:")]
 		void PresentMessageCenter([NullAllowed] UIViewController viewController);
