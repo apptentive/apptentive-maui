@@ -92,22 +92,25 @@ partial class ApptentiveImplementation: IApptentive
         //ApptentiveIOS.Shared.sendAttachment()
     //}
 
-    public void sendAttachmentFile(System.IO.Stream file, string MimeType) {
-        ApptentiveIOS.Shared.SendAttachment(NSData.FromStream(file), MimeType);
+    public void sendAttachmentFile(System.IO.Stream File, string MimeType) {
+        var Data = NSData.FromStream(File);
+
+        if (Data != null) {
+            ApptentiveIOS.Shared.SendAttachment(Data, MimeType);
+        } else {
+            // FIXME: log an error?
+        }
     }
 
     public void LogIn(string Token, Action<bool, string?> Completion) {
-        // FIXME: add this to the API definition
-        //ApptentiveIOS.Shared.LogIn(Token, (bool Success, string Error) => Completion(Success, Error) );
+        ApptentiveIOS.Shared.LogIn(Token, (bool Success, NSError Error) => Completion(Success, Error.LocalizedDescription) );
     }
 
     public void LogOut() {
-        // FIXME: add this to the API definition
-        //ApptentiveIOS.Shared.LogOut();
+        ApptentiveIOS.Shared.LogOut();
     }
 
-    public void UpdateToken(string Token) {
-        // FIXME: add this to the API definition
-        //ApptentiveIOS.Shared.UpdateToken();
+    public void UpdateToken(string Token, Action<bool>? Completion) {
+        ApptentiveIOS.Shared.UpdateToken(Token, Completion);
     }
 }
