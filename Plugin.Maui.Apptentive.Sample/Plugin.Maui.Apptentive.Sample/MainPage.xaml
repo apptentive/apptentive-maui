@@ -19,7 +19,7 @@
 
                 <Entry
                     x:Name="EngageEntry"
-                    MaxLength="20"
+                    MaxLength="40"
                     Placeholder="Where Event"
                     />
 
@@ -37,6 +37,191 @@
                 SemanticProperties.Hint="Opens Message Center"
                 Clicked="OnMessageCenterClicked"
                 />
+
+            <Label
+                Text="Person Data"
+                SemanticProperties.HeadingLevel="Level3"
+                FontSize="17"
+                HorizontalOptions="Center" />
+
+            <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="2*,2*,*">
+ 
+            <Entry
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                x:Name="PersonName"
+                MaxLength="40"
+                Placeholder="Testy McTestface"
+                />
+
+            <Entry
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                x:Name="PersonEmailAddress"
+                MaxLength="40"
+                Placeholder="test@example.com"
+                />
+
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    x:Name="PersonCustomStringKey"
+                    MaxLength="40"
+                    Placeholder="Key"
+                    />
+
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="PersonCustomStringValue"
+                    MaxLength="40"
+                    Placeholder="String"
+                    />
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    x:Name="PersonCustomStringAddBtn"
+                    Text="Add"
+                    SemanticProperties.Hint="Adds the specified string with the specified key"
+                    Clicked="OnPersonCustomStringAddClicked"
+                    />
+
+                <Entry
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    x:Name="PersonCustomNumberKey"
+                    MaxLength="40"
+                    Placeholder="Key"
+                    />
+
+                <Entry
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    x:Name="PersonCustomNumberValue"
+                    MaxLength="40"
+                    Placeholder="Number"
+                    />
+
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    x:Name="PersonCustomNumberAddBtn"
+                    Text="Add"
+                    SemanticProperties.Hint="Adds the specified number with the specified key"
+                    Clicked="OnPersonCustomNumberAddClicked"
+                    />
+
+                <Entry
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    x:Name="PersonCustomBoolKey"
+                    MaxLength="40"
+                    Placeholder="Key"
+                    />
+
+                <Switch
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    x:Name="PersonCustomBoolValue"
+                    IsToggled="true"
+                    />
+
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    x:Name="PersonCustomBoolAddBtn"
+                    Text="Add"
+                    SemanticProperties.Hint="Adds the specified boolean with the specified key"
+                    Clicked="OnPersonCustomBoolAddClicked"
+                    />
+            </Grid>
+
+            <Label
+                Text="Device Data"
+                SemanticProperties.HeadingLevel="Level3"
+                FontSize="17"
+                HorizontalOptions="Center" />
+
+            <Grid RowDefinitions="*,*,*" ColumnDefinitions="2*,2*,*">
+
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="DeviceCustomStringKey"
+                    MaxLength="40"
+                    Placeholder="Key"
+                    />
+
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="DeviceCustomStringValue"
+                    MaxLength="40"
+                    Placeholder="String"
+                    />
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    x:Name="DeviceCustomStringAddBtn"
+                    Text="Add"
+                    SemanticProperties.Hint="Adds the specified string with the specified key"
+                    Clicked="OnDeviceCustomStringAddClicked"
+                    />
+
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    x:Name="DeviceCustomNumberKey"
+                    MaxLength="40"
+                    Placeholder="Key"
+                    />
+
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    x:Name="DeviceCustomNumberValue"
+                    MaxLength="40"
+                    Placeholder="Number"
+                    />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    x:Name="DeviceCustomNumberAddBtn"
+                    Text="Add"
+                    SemanticProperties.Hint="Adds the specified number with the specified key"
+                    Clicked="OnDeviceCustomNumberAddClicked"
+                    />
+
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    x:Name="DeviceCustomBoolKey"
+                    MaxLength="40"
+                    Placeholder="Key"
+                    />
+
+                <Switch
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="DeviceCustomBoolValue"
+                    IsToggled="true"
+                    />
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    x:Name="DeviceCustomBoolAddBtn"
+                    Text="Add"
+                    SemanticProperties.Hint="Adds the specified boolean with the specified key"
+                    Clicked="OnDeviceCustomBoolAddClicked"
+                    />
+
+            </Grid>
 
         </VerticalStackLayout>
     </ScrollView>
