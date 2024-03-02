@@ -157,6 +157,18 @@ namespace ApptentiveKit.iOS
 		// @property (copy, nonatomic) NSString * _Nullable distributionVersion;
 		[NullAllowed, Export("distributionVersion")]
 		string DistributionVersion { get; set; }
+
+		// - (void)logInWithToken:(NSString * _Nonnull)token completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+		[Export("logInWithToken:completion:")]
+		void LogIn(string token, Action<bool, NSError> completion);
+
+		// - (void)logOut;
+		[Export("logOut")]
+		void LogOut();
+
+		// - (void)updateToken:(NSString * _Nonnull)token completion:(void (^ _Nullable)(BOOL))completion;
+		[Export("updateToken:completion:")]
+		void UpdateToken(string token, [NullAllowed] Action<bool> completion);
 	}
 
 	// @interface ApptentiveConfiguration : NSObject

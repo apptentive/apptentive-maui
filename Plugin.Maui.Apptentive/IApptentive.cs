@@ -45,11 +45,11 @@ public interface IApptentive {
 
     void sendAttachmentFile(System.IO.Stream file, string MimeType);
 
-    void LogIn(string Token, Action<bool, string?> completion);
+    void LogIn(string Token, Action<bool, string?> Completion);
 
     void LogOut();
 
-    void UpdateToken(string Token);
+    void UpdateToken(string Token, Action<bool>? Completion);
 
     // TODO: Listener for internal events
 }
