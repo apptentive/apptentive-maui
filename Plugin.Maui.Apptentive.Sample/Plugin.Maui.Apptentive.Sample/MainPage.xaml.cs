@@ -23,6 +23,34 @@ public partial class MainPage : ContentPage
 	{
 		Apptentive.Default.PresentMessageCenter();
 	}
+
+	private void OnPersonCustomStringAddClicked(object sender, EventArgs e) 
+	{
+
+	}
+
+	private void OnPersonCustomNumberAddClicked(object sender, EventArgs e) 
+	{
+		
+	}
+
+	private void OnPersonCustomBoolAddClicked(object sender, EventArgs e) 
+	{
+		
+	}
+
+	private void OnDeviceCustomStringAddClicked(object sender, EventArgs e) 
+	{
+		
+	}
+
+	private void OnDeviceCustomNumberAddClicked(object sender, EventArgs e) 
+	{
+		
+	}
+
+	private void OnDeviceCustomBoolAddClicked(object sender, EventArgs e) 
+	{
+		
+	}
 }
-
-
