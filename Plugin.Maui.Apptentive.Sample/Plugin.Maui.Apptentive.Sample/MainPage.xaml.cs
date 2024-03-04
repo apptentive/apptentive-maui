@@ -22,12 +22,12 @@ public partial class MainPage : ContentPage
 		Apptentive.Default.PresentMessageCenter();
 	}
 
-	private void OnPersonNameCompleted(object sender, EventArgs e)
+	private void OnPersonNameSetClicked(object sender, EventArgs e)
 	{
 		Apptentive.Default.SetPersonName(PersonName.Text);
 	}
 
-	private void OnPersonEmailAddressCompleted(object sender, EventArgs e)
+	private void OnPersonEmailAddressSetClicked(object sender, EventArgs e)
 	{
 		Apptentive.Default.setPersonEmailAddress(PersonEmailAddress.Text);
 	}

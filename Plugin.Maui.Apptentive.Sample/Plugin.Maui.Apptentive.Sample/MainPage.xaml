@@ -6,16 +6,10 @@
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
-            Padding="30,0"
+            Padding="30,30"
             VerticalOptions="Start">
 
-            <Label
-                Text="Plugin example app"
-                SemanticProperties.HeadingLevel="Level2"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="8">
 
                 <Entry
                     x:Name="EngageEntry"
@@ -49,21 +43,37 @@
                 <Entry
                     Grid.Row="0"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     x:Name="PersonName"
                     MaxLength="40"
                     Placeholder="Testy McTestface"
-                    Completed="OnPersonNameCompleted"
+                    />
+                
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    x:Name="PersonNameSetBtn"
+                    Text="Set"
+                    SemanticProperties.Hint="Sets the person name to the specified value"
+                    Clicked="OnPersonNameSetClicked"
                     />
 
                 <Entry
                     Grid.Row="1"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     x:Name="PersonEmailAddress"
                     MaxLength="40"
                     Placeholder="test@example.com"
-                    Completed="OnPersonEmailAddressCompleted"
+                    />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    x:Name="PersonEmailAddressSetBtn"
+                    Text="Set"
+                    SemanticProperties.Hint="Sets the person email address to the specified value"
+                    Clicked="OnPersonEmailAddressSetClicked"
                     />
 
                 <Entry
