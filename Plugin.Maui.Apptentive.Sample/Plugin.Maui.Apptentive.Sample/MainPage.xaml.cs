@@ -4,8 +4,6 @@ namespace Plugin.Maui.Apptentive.Sample;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
@@ -24,33 +22,132 @@ public partial class MainPage : ContentPage
 		Apptentive.Default.PresentMessageCenter();
 	}
 
+	private void OnPersonNameCompleted(object sender, EventArgs e)
+	{
+		Apptentive.Default.SetPersonName(PersonName.Text);
+	}
+
+	private void OnPersonEmailAddressCompleted(object sender, EventArgs e)
+	{
+		Apptentive.Default.setPersonEmailAddress(PersonEmailAddress.Text);
+	}
+
 	private void OnPersonCustomStringAddClicked(object sender, EventArgs e) 
 	{
+		var key = PersonCustomStringKey.Text;
+		var value = PersonCustomStringValue.Text;
 
+		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
+			Apptentive.Default.addCustomPersonData(key, value);
+			return;
+		}
+
+		Console.WriteLine("Missing key and/or value");
 	}
 
 	private void OnPersonCustomNumberAddClicked(object sender, EventArgs e) 
 	{
-		
+		var key = PersonCustomNumberKey.Text;
+		var value = PersonCustomNumberValue.Text;
+
+		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
+			try {
+				var numericValue = Double.Parse(value);
+
+				Apptentive.Default.addCustomPersonData(key, numericValue);
+				return;
+			}
+			catch (Exception exc)
+			{
+				Console.Write(exc);
+			}
+		}
+
+		Console.WriteLine("Missing or invalid key and/or value");
 	}
 
 	private void OnPersonCustomBoolAddClicked(object sender, EventArgs e) 
 	{
+		var key = PersonCustomBoolKey.Text;
+		var value = PersonCustomBoolValue.IsToggled;
+
+		if (!String.IsNullOrEmpty(key)) {
+			Apptentive.Default.addCustomPersonData(key, value);
+			return;
+		}
 		
+		Console.WriteLine("Missing key");		
+	}
+
+	private void OnPersonCustomDataRemoveClicked(object sender, EventArgs e)
+	{
+		var key = PersonCustomDataRemoveKey.Text;
+
+		if (!String.IsNullOrEmpty(key)) {
+			Apptentive.Default.removeCustomPersonData(key);
+			return;
+		}
+
+		Console.WriteLine("Missing key");		
 	}
 
 	private void OnDeviceCustomStringAddClicked(object sender, EventArgs e) 
 	{
-		
+		var key = DeviceCustomStringKey.Text;
+		var value = DeviceCustomStringValue.Text;
+
+		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
+			Apptentive.Default.addCustomDeviceData(key, value);
+			return;
+		}
+
+		Console.WriteLine("Missing key and/or value");
+
 	}
 
 	private void OnDeviceCustomNumberAddClicked(object sender, EventArgs e) 
 	{
-		
+		var key = DeviceCustomNumberKey.Text;
+		var value = DeviceCustomNumberValue.Text;
+
+		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
+			try {
+				var numericValue = Double.Parse(value);
+
+				Apptentive.Default.addCustomDeviceData(key, numericValue);
+				return;
+			}
+			catch (Exception exc)
+			{
+				Console.Write(exc);
+			}
+		}
+
+		Console.WriteLine("Missing or invalid key and/or value");
 	}
 
 	private void OnDeviceCustomBoolAddClicked(object sender, EventArgs e) 
 	{
+		var key = DeviceCustomBoolKey.Text;
+		var value = DeviceCustomBoolValue.IsToggled;
+
+		if (!String.IsNullOrEmpty(key)) {
+			Apptentive.Default.addCustomDeviceData(key, value);
+			return;
+		}
 		
+		Console.WriteLine("Missing key");		
+	}
+
+	private void OnDeviceCustomDataRemoveClicked(object sender, EventArgs e)
+	{
+		var key = DeviceCustomDataRemoveKey.Text;
+
+		if (!String.IsNullOrEmpty(key)) {
+			Apptentive.Default.removeCustomDeviceData(key);
+			return;
+		}
+
+		Console.WriteLine("Missing key");		
 	}
 }
