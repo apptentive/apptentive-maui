@@ -169,6 +169,10 @@ namespace ApptentiveKit.iOS
 		// - (void)updateToken:(NSString * _Nonnull)token completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("updateToken:completion:")]
 		void UpdateToken(string token, [NullAllowed] Action<bool> completion);
+
+		[NullAllowed, Export("authenticationFailureCallback")]
+		Action<ApptentiveAuthenticationFailureReason, string?> AuthenticationFailureCallback { get; set; }
+
 	}
 
 	// @interface ApptentiveConfiguration : NSObject
