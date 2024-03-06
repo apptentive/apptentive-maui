@@ -51,5 +51,7 @@ public interface IApptentive {
 
     void UpdateToken(string Token, Action<bool>? Completion);
 
-    // TODO: Listener for internal events
+    event EventNotificationHandler? EventEngaged;
+
+    event AuthenticationFailureHandler? AuthenticationFailed;
 }

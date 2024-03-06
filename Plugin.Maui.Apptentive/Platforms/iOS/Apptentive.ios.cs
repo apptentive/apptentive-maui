@@ -5,7 +5,14 @@ namespace Plugin.Maui.Apptentive;
 
 partial class ApptentiveImplementation: IApptentive
 {
+    public event EventNotificationHandler? EventEngaged;
+
+    public event AuthenticationFailureHandler? AuthenticationFailed;
+
     public void Register(ApptentiveConfiguration Configuration, Action<bool> Completion) {
+        NSNotificationCenter.DefaultCenter.AddObserver(new NSString("com.apptentive.apptentiveEventEngaged"), HandleEventEngaged, null);
+        ApptentiveIOS.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
+
         ApptentiveIOSConfiguration IOSConfiguration = new ApptentiveIOSConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
         IOSConfiguration.LogLevel = (ApptentiveKit.iOS.ApptentiveLogLevel)Configuration.LogLevel;
         IOSConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
@@ -112,5 +119,22 @@ partial class ApptentiveImplementation: IApptentive
 
     public void UpdateToken(string Token, Action<bool>? Completion) {
         ApptentiveIOS.Shared.UpdateToken(Token, Completion);
+    }
+
+    private void HandleEventEngaged(NSNotification notification)
+    {
+        if (EventEngaged != null) {
+            string? name = notification.UserInfo.ValueForKey(new NSString("eventType"))?.ToString();
+            string? type = notification.UserInfo.ValueForKey(new NSString("interactionType"))?.ToString();
+            string? id = notification.UserInfo.ValueForKey(new NSString("interactionID"))?.ToString();
+            string? source = notification.UserInfo.ValueForKey(new NSString("eventSource"))?.ToString();
+
+            EventEngaged?.Invoke(name, type, id, source);
+        }   
+    }
+
+    private void HandleAuthenticationFailed(ApptentiveAuthenticationFailureReason reason, string? error)
+    {
+        AuthenticationFailed?.Invoke(reason, error);
     }
 }

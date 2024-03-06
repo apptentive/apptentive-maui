@@ -27,7 +27,18 @@ public static class MauiProgram
 		Configuration.ShouldSanitizeLogMessages = false;
 		Apptentive.Default.Register(Configuration, null);
 
+		Apptentive.Default.EventEngaged += OnEventEngaged;
+
 		return builder.Build();
+	}
+
+	private static void OnEventEngaged(string? name, string? interaction, string? id, string? source) {
+		Console.Write("Notified of event engagement: ");
+		Console.Write(source);
+		Console.Write("#");
+		Console.Write(interaction ?? "app");
+		Console.Write("#");
+		Console.WriteLine(name);
 	}
 }
 
