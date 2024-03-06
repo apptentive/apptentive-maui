@@ -110,7 +110,7 @@ partial class ApptentiveImplementation: IApptentive
     }
 
     public void LogIn(string Token, Action<bool, string?> Completion) {
-        ApptentiveIOS.Shared.LogIn(Token, (bool Success, NSError Error) => Completion(Success, Error.LocalizedDescription) );
+        ApptentiveIOS.Shared.LogIn(Token, (bool Success, NSError Error) => Completion(Success, Error?.LocalizedDescription) );
     }
 
     public void LogOut() {

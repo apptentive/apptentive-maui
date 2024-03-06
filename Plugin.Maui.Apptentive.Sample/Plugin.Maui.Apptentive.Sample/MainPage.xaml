@@ -269,8 +269,42 @@
                     SemanticProperties.Hint="Removes any data with the specified key"
                     Clicked="OnDeviceCustomDataRemoveClicked"
                     />
+            </Grid>
+
+            <Label
+                Text="Multi-User"
+                SemanticProperties.HeadingLevel="Level3"
+                FontSize="17"
+                HorizontalOptions="Center" />
 
 
+
+            <Grid ColumnDefinitions="*,*,*" RowSpacing="8" ColumnSpacing="8">
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="LoginToken"
+                    Placeholder="JWT"
+                    />
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="LoginBtn"
+                    Text="Log In"
+                    SemanticProperties.Hint="Logs in using the specified JWT"
+                    Clicked="OnLoginClicked"
+                    />
+
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    x:Name="LogoutBtn"
+                    Text="Log Out"
+                    SemanticProperties.Hint="Logs out"
+                    Clicked="OnLogoutClicked"
+                    />
             </Grid>
 
         </VerticalStackLayout>

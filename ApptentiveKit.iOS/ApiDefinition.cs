@@ -4,6 +4,8 @@ using ObjCRuntime;
 using UIKit;
 using UserNotifications;
 
+#nullable enable
+
 namespace ApptentiveKit.iOS
 {
 	// @interface ApptentiveNavigationController : UINavigationController

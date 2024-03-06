@@ -1,6 +1,9 @@
-﻿using Plugin.Maui.Apptentive;
+﻿using System.Security.Principal;
+using Plugin.Maui.Apptentive;
 
 namespace Plugin.Maui.Apptentive.Sample;
+
+#nullable enable
 
 public partial class MainPage : ContentPage
 {
@@ -149,5 +152,28 @@ public partial class MainPage : ContentPage
 		}
 
 		Console.WriteLine("Missing key");		
+	}
+
+	private void OnLoginClicked(object sender, EventArgs e)
+	{
+		var token = LoginToken.Text;
+
+		Action<bool, string?> completionHandler = (success, error) => {
+			Console.Write("Login ");
+			Console.Write(success ? "Did " : "Did not ");
+			Console.WriteLine("Complete.");
+		};
+
+		if (!String.IsNullOrEmpty(token)) {
+			Apptentive.Default.LogIn(token, completionHandler);
+			return;
+		}
+
+		Console.WriteLine("Missing JWT token");
+	}
+
+	private void OnLogoutClicked(object sender, EventArgs e)
+	{
+		Apptentive.Default.LogOut();
 	}
 }

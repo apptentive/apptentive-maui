@@ -3,6 +3,8 @@ using Plugin.Maui.Apptentive;
 
 namespace Plugin.Maui.Apptentive.Sample;
 
+#nullable enable
+
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
@@ -22,10 +24,16 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<IApptentive>(Apptentive.Default);
 
+		Action<bool> completionHandler = (success) => {
+			Console.Write("Registration ");
+			Console.Write(success ? "did " : "did not ");
+			Console.WriteLine("succeed.");
+		};
+
 		var Configuration = new ApptentiveConfiguration("<#Your Apptentive Key#>", "<#Your Apptentive Secret#>");
 		Configuration.LogLevel = ApptentiveLogLevel.Verbose;
 		Configuration.ShouldSanitizeLogMessages = false;
-		Apptentive.Default.Register(Configuration, null);
+		Apptentive.Default.Register(Configuration, completionHandler);
 
 		Apptentive.Default.EventEngaged += OnEventEngaged;
 
