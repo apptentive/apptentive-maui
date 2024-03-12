@@ -19,6 +19,8 @@ partial class ApptentiveImplementation: IApptentive
         IOSConfiguration.DistributionName = Configuration.DistributionName;
         IOSConfiguration.DistributionVersion = Configuration.DistributionVersion;
 
+        ApptentiveIOS.Shared.Theme = UITheme.None;
+
 		ApptentiveIOS.Shared.Register(IOSConfiguration, Completion);
     }
 

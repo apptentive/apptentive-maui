@@ -3,6 +3,13 @@ using ObjCRuntime;
 namespace ApptentiveKit.iOS
 {
 	[Native]
+	public enum UITheme : long
+	{
+		Apptentive = 1,
+		None = 0
+	}
+
+	[Native]
 	public enum ApptentiveAuthenticationFailureReason : long
 	{
 		Unknown = 0,
