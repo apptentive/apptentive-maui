@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace Plugin.Maui.Apptentive.Sample;
 
