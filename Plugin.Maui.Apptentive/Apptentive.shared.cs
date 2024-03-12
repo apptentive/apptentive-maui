@@ -1,4 +1,9 @@
+using ApptentiveKit.iOS;
 namespace Plugin.Maui.Apptentive;
+
+public delegate void EventNotificationHandler(string? EventName, string? InteractionType, string? InteractionID, string? EventSource);
+
+public delegate void AuthenticationFailureHandler(ApptentiveAuthenticationFailureReason reason, string? error);
 
 public static class Apptentive
 {

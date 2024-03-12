@@ -227,7 +227,7 @@ public enum LogLevel : Swift.Int, Swift.Comparable {
     get
     set
   }
-  public var theme: ApptentiveKit.Apptentive.UITheme
+  @objc public var theme: ApptentiveKit.Apptentive.UITheme
   @objc public var personName: Swift.String? {
     @objc get
     @objc set
@@ -257,12 +257,12 @@ public enum LogLevel : Swift.Int, Swift.Comparable {
     @objc get
     @objc set
   }
-  public enum UITheme {
-    case apptentive
-    case none
-    public static func == (a: ApptentiveKit.Apptentive.UITheme, b: ApptentiveKit.Apptentive.UITheme) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
+  @objc public enum UITheme : Swift.Int {
+    case apptentive = 1
+    case none = 0
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
       get
     }
   }
@@ -1244,6 +1244,7 @@ extension ApptentiveKit.LogLevel : Swift.Hashable {}
 extension ApptentiveKit.LogLevel : Swift.RawRepresentable {}
 extension ApptentiveKit.Apptentive.UITheme : Swift.Equatable {}
 extension ApptentiveKit.Apptentive.UITheme : Swift.Hashable {}
+extension ApptentiveKit.Apptentive.UITheme : Swift.RawRepresentable {}
 extension ApptentiveKit.AuthenticationFailureReason : Swift.Equatable {}
 extension ApptentiveKit.AuthenticationFailureReason : Swift.Hashable {}
 extension ApptentiveKit.AuthenticationFailureReason : Swift.RawRepresentable {}
