@@ -15,7 +15,15 @@
                     x:Name="EngageEntry"
                     MaxLength="40"
                     Placeholder="Where Event"
-                    />
+                    >
+                        <Entry.Keyboard>
+                            <Keyboard x:FactoryMethod="Create">
+                                <x:Arguments>
+                                    <KeyboardFlags>Suggestions,CapitalizeNone</KeyboardFlags>
+                                </x:Arguments>
+                            </Keyboard>
+                        </Entry.Keyboard>
+                </Entry>
 
                 <Button
                     x:Name="EngageBtn"

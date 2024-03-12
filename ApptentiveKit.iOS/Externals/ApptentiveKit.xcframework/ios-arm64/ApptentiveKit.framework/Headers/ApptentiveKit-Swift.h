@@ -303,6 +303,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 @protocol ApptentiveDelegate;
+enum UITheme : NSInteger;
 @class NSString;
 @class UIImage;
 @class NSData;
@@ -316,6 +317,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Apptentive *
 + (Apptentive * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 /// An object that responds to authentication failures for logged-in conversations.
 @property (nonatomic, weak) id <ApptentiveDelegate> _Nullable delegate;
+/// The theme to apply to Apptentive UI.
+/// This property must be set before calling <code>register(credentials:)</code>.
+@property (nonatomic) enum UITheme theme;
 /// The name of the person using the app, if available.
 @property (nonatomic, copy) NSString * _Nullable personName;
 /// The email address of the person using the app, if available.
@@ -354,6 +358,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Apptentive *
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Indicates a theme that will be applied to Apptentive UI.
+typedef SWIFT_ENUM(NSInteger, UITheme, open) {
+/// Apptentive cross-platform look and feel.
+  UIThemeApptentive = 1,
+/// iOS default look and feel.
+  UIThemeNone = 0,
+};
 
 
 @class UNNotificationResponse;

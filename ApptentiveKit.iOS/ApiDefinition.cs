@@ -24,6 +24,10 @@ namespace ApptentiveKit.iOS
 		[Export ("shared", ArgumentSemantic.Strong)]
 		ApptentiveIOS Shared { get; }
 
+		// @property (nonatomic) enum UITheme theme;
+		[Export ("theme", ArgumentSemantic.Assign)]
+		UITheme Theme { get; set; }
+
 		// -(void)registerWithKey:(NSString * _Nonnull)key signature:(NSString * _Nonnull)signature completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("registerWithConfiguration:completion:")]
 		void Register(ApptentiveIOSConfiguration configuration, [NullAllowed] Action<bool> completion);
