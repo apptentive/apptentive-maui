@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.0
+VisualStudioVersion = 25.0.1706.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveEnjoymentDialog", "ApptentiveEnjoymentDialog.csproj", "{E9968A27-31ED-4C2C-A531-695E722C968A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveEnjoymentDialog", "ApptentiveEnjoymentDialog.csproj", "{C1D4A1A5-BA11-4EB0-AB35-2AC12DF42BB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9968A27-31ED-4C2C-A531-695E722C968A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9968A27-31ED-4C2C-A531-695E722C968A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9968A27-31ED-4C2C-A531-695E722C968A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9968A27-31ED-4C2C-A531-695E722C968A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D4A1A5-BA11-4EB0-AB35-2AC12DF42BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D4A1A5-BA11-4EB0-AB35-2AC12DF42BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D4A1A5-BA11-4EB0-AB35-2AC12DF42BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D4A1A5-BA11-4EB0-AB35-2AC12DF42BB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7B4B1947-46E5-4DE6-8F3D-F13F8A9605E4}
+		SolutionGuid = {62DEF7BE-2C07-4B35-991E-83A4E20DD91F}
 	EndGlobalSection
 EndGlobal
