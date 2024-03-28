@@ -37,7 +37,7 @@
 		<None Include="**\android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 	</ItemGroup>
 
-  	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
+  	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
 	    <ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" />
 	</ItemGroup>
 
