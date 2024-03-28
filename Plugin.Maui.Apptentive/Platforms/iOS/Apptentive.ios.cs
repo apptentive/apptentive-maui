@@ -137,6 +137,6 @@ partial class ApptentiveImplementation: IApptentive
 
     private void HandleAuthenticationFailed(ApptentiveAuthenticationFailureReason reason, string? error)
     {
-        AuthenticationFailed?.Invoke(reason, error);
+        AuthenticationFailed?.Invoke((long)reason, error);
     }
 }
