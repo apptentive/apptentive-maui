@@ -8,7 +8,7 @@ using Android.Widget;
 using ApptentiveSDK;
 using Java.Interop;
 using Apptentive.Com.Android;
-using ApptentiveCore;
+//using ApptentiveCore;
 using Java.Security;
 using Apptentive.Com.Android.Feedback.Engagement.Interactions;
 using Android.OS;
