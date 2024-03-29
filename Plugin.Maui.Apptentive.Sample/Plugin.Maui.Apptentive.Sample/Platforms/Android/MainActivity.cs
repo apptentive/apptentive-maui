@@ -12,7 +12,7 @@ public class MainActivity : MauiAppCompatActivity
      {
           base.OnCreate(savedInstanceState);
 
-          ApptentiveSDK.Apptentive.Engage("test");
+          ApptentiveSDK.Apptentive.Engage("hey");
      }
 }
 
