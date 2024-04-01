@@ -20,12 +20,14 @@ public partial class MainPage : ContentPage
 		Console.Write("Clicked engage button with");
 		Console.WriteLine(EngageEntry.Text);
 
-		Apptentive.Default.Engage(EngageEntry.Text);
+		//Apptentive.Default.Engage(EngageEntry.Text);
+		ApptentiveSDK.Apptentive.Engage(EngageEntry.Text);
     }
 
 	private void OnMessageCenterClicked(object sender, EventArgs e)
 	{
-		Apptentive.Default.PresentMessageCenter();
+		//Apptentive.Default.PresentMessageCenter();
+		ApptentiveSDK.Apptentive.ShowMessageCenter();
 	}
 
 	private void OnPersonNameSetClicked(object sender, EventArgs e)
