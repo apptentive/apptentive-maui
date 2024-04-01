@@ -5,7 +5,7 @@ namespace Plugin.Maui.Apptentive;
 public interface IApptentive {
     void Register(ApptentiveConfiguration configuration, Action<bool> completion, MauiApplication? application = null);
 
-    void Engage(string Event);
+    void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null);
 
     void CanShowInteraction(string Event, Action<bool> completion);
 
