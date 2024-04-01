@@ -1,4 +1,5 @@
 ﻿using ApptentiveSDK;
+using ApptentiveLogLevel = Apptentive.Com.Android.Util.LogLevel;
 
 namespace Plugin.Maui.Apptentive;
 
@@ -8,19 +9,13 @@ partial class ApptentiveImplementation: IApptentive
 
     public event AuthenticationFailureHandler? AuthenticationFailed;
 
-    public void Register(ApptentiveConfiguration Configuration, Action<bool> Completion) {
-        // NSNotificationCenter.DefaultCenter.AddObserver(new NSString("com.apptentive.apptentiveEventEngaged"), HandleEventEngaged, null);
-        // ApptentiveIOS.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
-
-        // ApptentiveIOSConfiguration IOSConfiguration = new ApptentiveIOSConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
-        // IOSConfiguration.LogLevel = (ApptentiveKit.iOS.ApptentiveLogLevel)Configuration.LogLevel;
-        // IOSConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
-        // IOSConfiguration.DistributionName = Configuration.DistributionName;
-        // IOSConfiguration.DistributionVersion = Configuration.DistributionVersion;
-
-        // ApptentiveIOS.Shared.Theme = UITheme.None;
-
-		// ApptentiveIOS.Shared.Register(IOSConfiguration, Completion);
+    public void Register(ApptentiveConfiguration Configuration, Action<bool> Completion, MauiApplication Application) {
+        var configuration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
+        configuration.LogLevel = (ApptentiveLogLevel)Configuration.LogLevel;
+        configuration.DistributionName = Configuration.DistributionName;
+        configuration.DistributionVersion = Configuration.DistributionVersion;
+        configuration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
+        ApptentiveSDK.Apptentive.Register(Application, Configuration);
     }
 
     public void Engage(string Event) {

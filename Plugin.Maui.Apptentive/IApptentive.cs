@@ -3,7 +3,7 @@ using System.IO;
 namespace Plugin.Maui.Apptentive;
 
 public interface IApptentive {
-    void Register(ApptentiveConfiguration configuration, Action<bool> completion);
+    void Register(ApptentiveConfiguration configuration, Action<bool> completion, MauiApplication? application = null);
 
     void Engage(string Event);
 
