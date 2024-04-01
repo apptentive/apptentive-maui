@@ -11,9 +11,7 @@ public class MainApplication : MauiApplication
 		: base(handle, ownership)
 	{
 		 var configuration = new ApptentiveSDK.ApptentiveConfiguration("ANDROID-XOLOFAX-cdfb1ae00eeb", "2c1883d1d22686f4588ad9126f037cd7");
-            //configuration.LogLevel = ApptentiveLogLevel.Verbose;
             ApptentiveSDK.Apptentive.Register(this,configuration);
-            //Android.Util.Log.Info("XoloFax", "Apptentive Registered!");
 	}
 
 	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
