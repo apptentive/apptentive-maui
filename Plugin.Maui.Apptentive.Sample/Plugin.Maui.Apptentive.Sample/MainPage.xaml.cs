@@ -1,5 +1,8 @@
 ﻿using System.Security.Principal;
 using Plugin.Maui.Apptentive;
+using ApptentiveSDK;
+using Microsoft.Maui.Graphics;
+
 
 namespace Plugin.Maui.Apptentive.Sample;
 
@@ -10,7 +13,34 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+
+		   Button myButton = new Button
+        {
+            Text = "Click Me",
+            AutomationId = "myButton", // Optional: Set an automation ID for UI testing
+            WidthRequest = 200,
+            HeightRequest = 50,
+            Margin = new Thickness(20),
+           
+        };
+
+        // Subscribe to the Clicked event
+        myButton.Clicked += OnMyButtonClicked;
+
+        // Add the button to the layout
+        Content = new StackLayout
+        {
+            Children = { myButton },
+            VerticalOptions = LayoutOptions.CenterAndExpand,
+            HorizontalOptions = LayoutOptions.CenterAndExpand
+        };
 	}
+
+	  private void OnMyButtonClicked(object sender, EventArgs e)
+    {
+        // Handle button click event
+       ApptentiveSDK.Apptentive.ShowMessageCenter();
+    }
 
 	private void OnEngageClicked(object sender, EventArgs e)
 	{
