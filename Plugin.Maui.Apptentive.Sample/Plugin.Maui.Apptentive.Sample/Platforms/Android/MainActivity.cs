@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using ApptentiveSDK;
+using Plugin.Maui.Apptentive;
 
 namespace Plugin.Maui.Apptentive.Sample;
 
@@ -11,7 +11,7 @@ public class MainActivity : MauiAppCompatActivity, IApptentiveActivityInfo
      protected override void OnCreate(Bundle savedInstanceState)
      {
           base.OnCreate(savedInstanceState);
-           ApptentiveSDK.Apptentive.RegisterApptentiveActivityInfoCallback(this);
+           //TODO: Call RegisterApptentiveActivityInfoCallback here.
      }
 
 
