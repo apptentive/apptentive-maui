@@ -27,8 +27,6 @@ namespace ApptentiveSDK
 
         public static void Register(Application application, ApptentiveConfiguration configuration, Action<bool> onCompletion = null)
         {
-            configuration.DistributionName = "Xamarin";
-            configuration.DistributionVersion = "6.1.0";
             ApptentiveSDK.Apptentive.Register(application, configuration, new RegisterCallback(onCompletion));
         }
 

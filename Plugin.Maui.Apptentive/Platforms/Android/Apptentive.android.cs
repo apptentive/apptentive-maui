@@ -18,8 +18,8 @@ partial class ApptentiveImplementation: IApptentive
         ApptentiveSDK.Apptentive.Register(Application, Configuration);
     }
 
-    public void Engage(string Event) {
-      //  ApptentiveIOS.Shared.Engage(Event, null);
+    public void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null) {
+      ApptentiveSDK.Apptentive.Engage(Event, customData, new EngagementCallback(onCompletion));
     }
 
     public void CanShowInteraction(string Event, Action<bool> completion) {
