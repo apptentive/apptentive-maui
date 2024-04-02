@@ -10,7 +10,6 @@ public class MainApplication : MauiApplication
 	public MainApplication(IntPtr handle, JniHandleOwnership ownership)
 		: base(handle, ownership)
 	{
-		//TODO: Create ApptentiveConfiguration and all Register.
 	}
 
 	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
