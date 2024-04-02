@@ -60,3 +60,26 @@ public enum ApptentiveLogLevel : ulong
     Debug = 5,
     Verbose = 6
 }
+
+
+public static class LogLevelConverter
+{
+    public static ApptentiveLogLevel ConvertToApptentiveLogLevel(LogLevel logLevel)
+    {
+        switch (logLevel)
+        {
+            case LogLevel.Verbose:
+                return ApptentiveLogLevel.Verbose;
+            case LogLevel.Debug:
+                return ApptentiveLogLevel.Debug;
+            case LogLevel.Info:
+                return ApptentiveLogLevel.Info;
+            case LogLevel.Warning:
+                return ApptentiveLogLevel.Warn;
+            case LogLevel.Error:
+                return ApptentiveLogLevel.Error;
+            default:
+                return ApptentiveLogLevel.Undefined;
+        }
+    }
+}

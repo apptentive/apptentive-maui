@@ -12,7 +12,7 @@ partial class ApptentiveImplementation : IApptentive
   public void Register(ApptentiveConfiguration Configuration, Action<bool> Completion, MauiApplication Application = null)
   {
     var configuration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
-    configuration.LogLevel = (ApptentiveLogLevel)Configuration.LogLevel;
+    configuration.LogLevel = LogLevelConverter.ConvertToApptentiveLogLevel(Configuration.LogLevel);
     configuration.DistributionName = Configuration.DistributionName;
     configuration.DistributionVersion = Configuration.DistributionVersion;
     configuration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
