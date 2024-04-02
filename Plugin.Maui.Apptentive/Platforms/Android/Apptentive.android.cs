@@ -28,110 +28,80 @@ partial class ApptentiveImplementation: IApptentive
     }
 
     public void PresentMessageCenter() {
-     //   ApptentiveIOS.Shared.PresentMessageCenter(null);
+     ApptentiveSDK.Apptentive.ShowMessageCenter();
     }
 
     public void CanShowMessageCenter(Action<bool> completion) {
-       // ApptentiveIOS.Shared.QueryCanShowMessageCenter((bool result) => completion(result));
+       ApptentiveSDK.Apptentive.CanShowMessageCenter(completion);
+    
     }
 
     public void SetPersonName(string PersonName) {
-       // ApptentiveIOS.Shared.PersonName = PersonName;
+       ApptentiveSDK.Apptentive.SetPersonName(PersonName);
     }
 
     public void setPersonEmailAddress(string PersonEmailAddress) {
-       // ApptentiveIOS.Shared.PersonEmailAddress = PersonEmailAddress;
+       ApptentiveSDK.Apptentive.SetPersonEmail(PersonEmailAddress);
     }
 
     public void addCustomPersonData(string Key, string Value) {
-        //ApptentiveIOS.Shared.AddCustomPersonData(Value, Key);
+       ApptentiveSDK.Apptentive.AddCustomPersonData(Key, Value);
     }
 
     public void addCustomPersonData(string Key, double Value) {
-       // ApptentiveIOS.Shared.AddCustomPersonData(new NSNumber(Value), Key);
+       int intValue = (int)Value;
+       ApptentiveSDK.Apptentive.AddCustomPersonData(Key, (Java.Lang.Number)intValue);
     }
 
-    // TODO: Add overloads for int, float, etc.?
-
     public void addCustomPersonData(string Key, bool Value) {
-        //ApptentiveIOS.Shared.AddCustomPersonData(Value, Key);
+     ApptentiveSDK.Apptentive.AddCustomPersonData(Key, (Java.Lang.Boolean)Value);
     }
 
     public void removeCustomPersonData(string Key) {
-       // ApptentiveIOS.Shared.RemoveCustomPersonData(Key);
+     ApptentiveSDK.Apptentive.RemoveCustomPersonData(Key);
     }
 
     public void addCustomDeviceData(string Key, string Value) {
-      //  ApptentiveIOS.Shared.AddCustomDeviceData(Value, Key);
+      ApptentiveSDK.Apptentive.AddCustomDeviceData(Key, Value);
     }
 
     public void addCustomDeviceData(string Key, double Value) {
-        //ApptentiveIOS.Shared.AddCustomDeviceData(new NSNumber(Value), Key);
+       int intValue = (int)Value;
+       ApptentiveSDK.Apptentive.AddCustomDeviceData(Key,(Java.Lang.Number)intValue)
     }
 
-    // TODO: Add overloads for int, float, etc.?
-
     public void addCustomDeviceData(string Key, bool Value) {
-       // ApptentiveIOS.Shared.AddCustomDeviceData(Value, Key);
-
+      ApptentiveSDK.Apptentive.AddCustomDeviceData(Key, (Java.Lang.Boolean)Value);
     }
 
     public void removeCustomDeviceData(string Key) {
-      //  ApptentiveIOS.Shared.RemoveCustomDeviceData(Key);
+     ApptentiveSDK.Apptentive.RemoveCustomDeviceData(Key);
     }
 
-    // TODO: Push notification integration
-    // This should maybe be platform-specific, where they `using` the native module. 
-
     public int UnreadMessageCount { get {
-        return 0;
+        return ApptentiveSDK.Apptentive.UnreadMessageCount;
     }}
 
     public void sentAttachmentText(string Text) {
-      //  ApptentiveIOS.Shared.SendAttachment(Text);
+      ApptentiveSDK.Apptentive.SendAttachmentText(Text);
     }
 
-    //public void sendAttachmentImage(System.Drawing.Image image) {
-        // FIXME: Not clear how to turn System.Drawing.Image into UIImage. 
-        //ApptentiveIOS.Shared.sendAttachment()
-    //}
+    public void sendAttachmentImage(System.Drawing.Image image) {
+         using (MemoryStream memoryStream = new MemoryStream()) {
+        image.Save(memoryStream, ImageFormat.Jpeg);
+        byte[] byteArray = memoryStream.ToArray();
+        string mimeType = "image/jpeg";
+        ApptentiveSDK.Apptentive.SendAttachmentFile(byteArray, mimeType);
+    }
+    }
 
     public void sendAttachmentFile(System.IO.Stream File, string MimeType) {
-        // var Data = NSData.FromStream(File);
-
-        // if (Data != null) {
-        //     ApptentiveIOS.Shared.SendAttachment(Data, MimeType);
-        // } else {
-        //     // FIXME: log an error?
-        // }
+        ApptentiveSDK.Apptentive.SendAttachmentFile(File, MimeType);
     }
 
-    public void LogIn(string Token, Action<bool, string?> Completion) {
-       // ApptentiveIOS.Shared.LogIn(Token, (bool Success, NSError Error) => Completion(Success, Error?.LocalizedDescription) );
-    }
+    public void LogIn(string Token, Action<bool, string?> Completion) {}
 
-    public void LogOut() {
-      //  ApptentiveIOS.Shared.LogOut();
-    }
+    public void LogOut() {}
 
-    public void UpdateToken(string Token, Action<bool>? Completion) {
-        //ApptentiveIOS.Shared.UpdateToken(Token, Completion);
-    }
-
-    // private void HandleEventEngaged(NSNotification notification)
-    // {
-    //     // if (EventEngaged != null) {
-    //     //     string? name = notification.UserInfo.ValueForKey(new NSString("eventType"))?.ToString();
-    //     //     string? type = notification.UserInfo.ValueForKey(new NSString("interactionType"))?.ToString();
-    //     //     string? id = notification.UserInfo.ValueForKey(new NSString("interactionID"))?.ToString();
-    //     //     string? source = notification.UserInfo.ValueForKey(new NSString("eventSource"))?.ToString();
-
-    //     //     EventEngaged?.Invoke(name, type, id, source);
-    //     // }   
-    // }
-
-    // private void HandleAuthenticationFailed(long reason, string? error)
-    // {
-    //  //   AuthenticationFailed?.Invoke(reason, error);
-    // }
+    public void UpdateToken(string Token, Action<bool>? Completion) {}
 }
