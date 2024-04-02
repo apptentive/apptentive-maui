@@ -11,7 +11,7 @@ public class MainActivity : MauiAppCompatActivity, IApptentiveActivityInfo
      protected override void OnCreate(Bundle savedInstanceState)
      {
           base.OnCreate(savedInstanceState);
-           //TODO: Call RegisterApptentiveActivityInfoCallback here.
+           ApptentiveSDK.Apptentive.RegisterApptentiveActivityInfoCallback(this);
      }
 
 
