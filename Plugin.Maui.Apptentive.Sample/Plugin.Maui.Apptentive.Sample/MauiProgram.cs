@@ -30,7 +30,7 @@ public static class MauiProgram
 			Console.WriteLine("succeed.");
 		};
 
-		var Configuration = new ApptentiveConfiguration("<#Your Apptentive Key#>", "<#Your Apptentive Secret#>");
+		var Configuration = new Configuration("<#Your Apptentive Key#>", "<#Your Apptentive Secret#>");
 		Configuration.LogLevel = ApptentiveLogLevel.Verbose;
 		Configuration.ShouldSanitizeLogMessages = false;
 		Apptentive.Default.Register(Configuration, completionHandler);

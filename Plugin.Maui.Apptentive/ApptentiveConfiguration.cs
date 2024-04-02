@@ -8,7 +8,7 @@ namespace Plugin.Maui.Apptentive;
     /// This class wraps the native ApptentiveConfiguration class and adds
     /// DistributionName and DistributionVersion on top of the basic configuration
     /// </summary>
-public class ApptentiveConfiguration
+public class Configuration
 {
     public readonly string ApptentiveKey;
     public readonly string ApptentiveSignature;
@@ -18,7 +18,7 @@ public class ApptentiveConfiguration
     public long RatingInteractionThrottleLength;
     public string? CustomAppStoreURL;
 
-    public ApptentiveConfiguration(string ApptentiveKey, string ApptentiveSignature)
+    public Configuration(string ApptentiveKey, string ApptentiveSignature)
     {
         if (string.IsNullOrEmpty(ApptentiveKey))
         {
@@ -59,27 +59,4 @@ public enum ApptentiveLogLevel : ulong
     Info = 4,
     Debug = 5,
     Verbose = 6
-}
-
-
-public static class LogLevelConverter
-{
-    public static ApptentiveLogLevel ConvertToApptentiveLogLevel(LogLevel logLevel)
-    {
-        switch (logLevel)
-        {
-            case LogLevel.Verbose:
-                return ApptentiveLogLevel.Verbose;
-            case LogLevel.Debug:
-                return ApptentiveLogLevel.Debug;
-            case LogLevel.Info:
-                return ApptentiveLogLevel.Info;
-            case LogLevel.Warning:
-                return ApptentiveLogLevel.Warn;
-            case LogLevel.Error:
-                return ApptentiveLogLevel.Error;
-            default:
-                return ApptentiveLogLevel.Undefined;
-        }
-    }
 }
