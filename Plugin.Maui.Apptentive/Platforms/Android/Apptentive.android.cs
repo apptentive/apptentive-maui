@@ -9,13 +9,13 @@ partial class ApptentiveImplementation: IApptentive
 
     public event AuthenticationFailureHandler? AuthenticationFailed;
 
-    public void Register(ApptentiveConfiguration Configuration, Action<bool> Completion, MauiApplication Application) {
+    public void Register(ApptentiveConfiguration Configuration, Action<bool> Completion, MauiApplication Application = null) {
         var configuration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
         configuration.LogLevel = (ApptentiveLogLevel)Configuration.LogLevel;
         configuration.DistributionName = Configuration.DistributionName;
         configuration.DistributionVersion = Configuration.DistributionVersion;
         configuration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
-        ApptentiveSDK.Apptentive.Register(Application, Configuration);
+        ApptentiveSDK.Apptentive.Register(Application, Configuration, Completion);
     }
 
     public void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null) {
@@ -23,7 +23,8 @@ partial class ApptentiveImplementation: IApptentive
     }
 
     public void CanShowInteraction(string Event, Action<bool> completion) {
-       // ApptentiveIOS.Shared.QueryCanShowInteraction(Event, (bool result) => completion(result));
+      bool canShowInteraction = ApptentiveSDK.Apptentive.QueryCanShowInteraction(eventName);
+      completion(canShowInteraction);
     }
 
     public void PresentMessageCenter() {
