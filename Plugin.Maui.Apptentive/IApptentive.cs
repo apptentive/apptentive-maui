@@ -3,8 +3,8 @@ using System.IO;
 namespace Plugin.Maui.Apptentive;
 
 public interface IApptentive {
-    void Register(Configuration configuration, Action<bool> completion, MauiApplication? Application);
-    void Register(Configuration configuration, Action<bool> completion);
+    void Register(Configuration Configuration, Action<bool> completion, MauiApplication? Application);
+    void Register(Configuration Configuration, Action<bool> completion);
 
     void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null);
 

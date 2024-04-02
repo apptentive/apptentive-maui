@@ -9,14 +9,15 @@ partial class ApptentiveImplementation : IApptentive
 
   public event AuthenticationFailureHandler? AuthenticationFailed;
 
-  public void Register(Configuration configuration, Action<bool> completion) {}
+  public void Register(Configuration Configuration, Action<bool> completion) {}
   public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication Application)
   {
-    var configuration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
-    // configuration.DistributionName = Configuration.DistributionName;
-    // configuration.DistributionVersion = Configuration.DistributionVersion;
-    configuration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
-    ApptentiveSDK.Apptentive.Register(Application, configuration, Completion);
+    var androidConfiguration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
+     androidConfiguration.DistributionVersion = Configuration.DistributionVersion;
+     androidConfiguration.DistributionName = Configuration.DistributionName;
+     androidConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
+     //configuration.LogLevel = (ApptentiveSDK.Apptentive.LogLevel)Configuration.LogLevel;
+    ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
   }
 
   public void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null)
