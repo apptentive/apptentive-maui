@@ -16,9 +16,9 @@ public class MainApplication : MauiApplication
 			Console.WriteLine("succeed.");
 		};
 		var AndroidConfiguration = new Configuration("ANDROID-XOLOFAX-cdfb1ae00eeb", "2c1883d1d22686f4588ad9126f037cd7");
-			AndroidConfiguration.LogLevel = ApptentiveLogLevel.Verbose;
-		AndroidConfiguration.ShouldSanitizeLogMessages = false;
-		Apptentive.Default.Register(AndroidConfiguration, completionHandler, this);
+		    AndroidConfiguration.LogLevel = ApptentiveLogLevel.Verbose;
+		    AndroidConfiguration.ShouldSanitizeLogMessages = false;
+		    Apptentive.Default.Register(AndroidConfiguration, completionHandler, this);
 
 		    // var configuration = new ApptentiveSDK.ApptentiveConfiguration("ANDROID-XOLOFAX-cdfb1ae00eeb", "2c1883d1d22686f4588ad9126f037cd7");
             // ApptentiveSDK.Apptentive.Register(this,configuration);
