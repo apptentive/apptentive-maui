@@ -15,6 +15,7 @@ public class Configuration
     public ApptentiveLogLevel LogLevel;
     public bool ShouldSanitizeLogMessages;
     public bool ShouldEncryptStorage;
+    public bool ShouldInheritAppTheme;
     public long RatingInteractionThrottleLength;
     public string? CustomAppStoreURL;
 
@@ -37,6 +38,7 @@ public class Configuration
         ShouldSanitizeLogMessages = !System.Diagnostics.Debugger.IsAttached;
         ShouldEncryptStorage = false;      
         RatingInteractionThrottleLength = 7 * 24 * 60 * 60 * 1000;
+        ShouldInheritAppTheme = false;
     }
 
     public string DistributionName

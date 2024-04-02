@@ -69,4 +69,7 @@
 		 <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.7.0.1"/>
 		 <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.7.0.1"/>
 	</ItemGroup>
+	<ItemGroup>
+    <ProguardConfiguration Include="proguard.cfg" />
+  </ItemGroup>
 </Project>

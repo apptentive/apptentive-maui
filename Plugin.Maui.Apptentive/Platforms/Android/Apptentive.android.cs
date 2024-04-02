@@ -1,5 +1,5 @@
 ﻿using ApptentiveSDK;
-using ApptentiveLogLevel = Apptentive.Com.Android.Util.LogLevel;
+using AndroidLogLevel = Apptentive.Com.Android.Util.LogLevel;
 
 namespace Plugin.Maui.Apptentive;
 
@@ -16,8 +16,9 @@ partial class ApptentiveImplementation : IApptentive
      androidConfiguration.DistributionVersion = Configuration.DistributionVersion;
      androidConfiguration.DistributionName = Configuration.DistributionName;
      androidConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
-     //configuration.LogLevel = (ApptentiveSDK.Apptentive.LogLevel)Configuration.LogLevel;
-    ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
+     androidConfiguration.ShouldInheritAppTheme = Configuration.ShouldInheritAppTheme;
+     //TODO: Log Level is not reliably accessible.
+     ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
   }
 
   public void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null)
