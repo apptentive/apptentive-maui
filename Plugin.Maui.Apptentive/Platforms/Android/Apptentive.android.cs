@@ -38,7 +38,6 @@ partial class ApptentiveImplementation : IApptentive
   public void CanShowMessageCenter(Action<bool> completion)
   {
     ApptentiveSDK.Apptentive.CanShowMessageCenter(completion);
-
   }
 
   public void SetPersonName(string PersonName)
@@ -81,7 +80,7 @@ partial class ApptentiveImplementation : IApptentive
   {
     int intValue = (int)Value;
     ApptentiveSDK.Apptentive.AddCustomDeviceData(Key, (Java.Lang.Number)intValue)
-    }
+  }
 
   public void addCustomDeviceData(string Key, bool Value)
   {
