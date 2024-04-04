@@ -37,7 +37,7 @@
 		<None Include="**\android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 	</ItemGroup>
 
-  	<ItemGroup Condition=" '$(TargetPlatformIdentifier)' == 'ios' ">
+  	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
 	    <ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" />
 	</ItemGroup>
 
@@ -53,41 +53,6 @@
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveSurvey\ApptentiveSurvey\ApptentiveSurvey.csproj" />
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveFeedback\ApptentiveFeedback\ApptentiveFeedback.csproj" />
 	</ItemGroup>
-
-	<!--
-	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-		<Reference Include="ApptentiveCore">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\obj\Debug\ApptentiveCore.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveCoreUI">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveCoreUI\ApptentiveCoreUI\obj\Debug\ApptentiveCoreUI.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveEnjoymentDialog">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog\obj\Debug\ApptentiveEnjoymentDialog.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveInAppReview">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveInAppReview\ApptentiveInAppReview\obj\Debug\ApptentiveInAppReview.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveMessageCenter">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveMessageCenter\ApptentiveMessageCenter\obj\Debug\ApptentiveMessageCenter.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveNavigateToLink">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveNavigateToLink\ApptentiveNavigateToLink\obj\Debug\ApptentiveNavigateToLink.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveNotes">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveNotes\ApptentiveNotes\obj\Debug\ApptentiveNotes.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveRatings">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveRatings\ApptentiveRatings\obj\Debug\ApptentiveRatings.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveSurvey">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveSurvey\ApptentiveSurvey\obj\Debug\ApptentiveSurvey.dll</HintPath>
-		</Reference>
-		<Reference Include="ApptentiveFeedback">
-			<HintPath>..\ApptentiveKit.Android\ApptentiveFeedback\ApptentiveFeedback\obj\Debug\ApptentiveFeedback.dll</HintPath>
-		</Reference>
-	</ItemGroup>
-	-->
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" IsImplicitlyDefined="true" />

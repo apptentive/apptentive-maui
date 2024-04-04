@@ -1,5 +1,6 @@
 using ApptentiveKit.iOS;
 using Foundation;
+using System.IO;
 
 namespace Plugin.Maui.Apptentive;
 
@@ -8,8 +9,8 @@ partial class ApptentiveImplementation: IApptentive
     public event EventNotificationHandler? EventEngaged;
 
     public event AuthenticationFailureHandler? AuthenticationFailed;
-
-    public void Register(ApptentiveConfiguration Configuration, Action<bool> Completion) {
+    public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication? Application) {}
+    public void Register(Configuration Configuration, Action<bool> Completion) {
         NSNotificationCenter.DefaultCenter.AddObserver(new NSString("com.apptentive.apptentiveEventEngaged"), HandleEventEngaged, null);
         ApptentiveIOS.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
 

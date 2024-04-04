@@ -8,17 +8,18 @@ namespace Plugin.Maui.Apptentive;
     /// This class wraps the native ApptentiveConfiguration class and adds
     /// DistributionName and DistributionVersion on top of the basic configuration
     /// </summary>
-public class ApptentiveConfiguration
+public class Configuration
 {
     public readonly string ApptentiveKey;
     public readonly string ApptentiveSignature;
     public ApptentiveLogLevel LogLevel;
     public bool ShouldSanitizeLogMessages;
     public bool ShouldEncryptStorage;
+    public bool ShouldInheritAppTheme;
     public long RatingInteractionThrottleLength;
     public string? CustomAppStoreURL;
 
-    public ApptentiveConfiguration(string ApptentiveKey, string ApptentiveSignature)
+    public Configuration(string ApptentiveKey, string ApptentiveSignature)
     {
         if (string.IsNullOrEmpty(ApptentiveKey))
         {
@@ -37,6 +38,7 @@ public class ApptentiveConfiguration
         ShouldSanitizeLogMessages = !System.Diagnostics.Debugger.IsAttached;
         ShouldEncryptStorage = false;      
         RatingInteractionThrottleLength = 7 * 24 * 60 * 60 * 1000;
+        ShouldInheritAppTheme = false;
     }
 
     public string DistributionName

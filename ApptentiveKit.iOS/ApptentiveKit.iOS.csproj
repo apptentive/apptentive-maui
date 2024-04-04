@@ -9,12 +9,12 @@
     <OutputType>Library</OutputType>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
     <NativeReference Include="Externals\ApptentiveKit.xcframework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>

@@ -30,7 +30,7 @@ public static class MauiProgram
 			Console.WriteLine("succeed.");
 		};
 
-		var Configuration = new ApptentiveConfiguration("IOS-XAMARIN-IOS-8f46ccae63c0", "1bb31ba70317f17edcad284047483dfa");
+		var Configuration = new Configuration("IOS-XAMARIN-IOS-8f46ccae63c0", "1bb31ba70317f17edcad284047483dfa");
 		Configuration.LogLevel = ApptentiveLogLevel.Verbose;
 		Configuration.ShouldSanitizeLogMessages = false;
 		Apptentive.Default.Register(Configuration, completionHandler);

@@ -1,6 +1,7 @@
 ﻿using System.Security.Principal;
 using Plugin.Maui.Apptentive;
 
+
 namespace Plugin.Maui.Apptentive.Sample;
 
 #nullable enable
