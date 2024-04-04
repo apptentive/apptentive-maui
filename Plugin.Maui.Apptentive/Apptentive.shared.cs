@@ -1,4 +1,3 @@
-//using ApptentiveKit.iOS;
 namespace Plugin.Maui.Apptentive;
 
 public delegate void EventNotificationHandler(string? EventName, string? InteractionType, string? InteractionID, string? EventSource);
