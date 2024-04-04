@@ -3,9 +3,10 @@ using System.IO;
 namespace Plugin.Maui.Apptentive;
 
 public interface IApptentive {
-    void Register(ApptentiveConfiguration configuration, Action<bool> completion);
+    void Register(Configuration Configuration, Action<bool> completion, MauiApplication? Application);
+    void Register(Configuration Configuration, Action<bool> completion);
 
-    void Engage(string Event);
+    void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null);
 
     void CanShowInteraction(string Event, Action<bool> completion);
 

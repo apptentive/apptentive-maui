@@ -9,4 +9,3 @@
  <remove-node path="/api/package[@name='apptentive.com.android.feedback']" />
  <remove-node path="/api/package[@name='com.apptentive.android.sdk.storage']" />
 </metadata>
-
