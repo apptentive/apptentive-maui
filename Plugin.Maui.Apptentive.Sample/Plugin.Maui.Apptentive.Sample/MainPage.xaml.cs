@@ -1,6 +1,5 @@
 ﻿using System.Security.Principal;
 using Plugin.Maui.Apptentive;
-using Microsoft.Maui.Graphics;
 
 
 namespace Plugin.Maui.Apptentive.Sample;
