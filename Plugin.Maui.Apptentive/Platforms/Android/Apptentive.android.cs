@@ -3,6 +3,10 @@ using AndroidLogLevel = Apptentive.Com.Android.Util.LogLevel;
 
 namespace Plugin.Maui.Apptentive;
 
+public partial interface IApptentive {
+    void Register(Configuration Configuration, Action<bool> completion, MauiApplication? Application);   
+}
+
 partial class ApptentiveImplementation : IApptentive
 {
   public event EventNotificationHandler? EventEngaged;
@@ -21,9 +25,9 @@ partial class ApptentiveImplementation : IApptentive
      ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
   }
 
-  public void Engage(string Event, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null)
+  public void Engage(string Event, Action<bool> onCompletion = null)
   {
-    ApptentiveSDK.Apptentive.Engage(Event, customData, new EngagementCallback(onCompletion));
+    ApptentiveSDK.Apptentive.Engage(Event, null, new EngagementCallback(onCompletion));
   }
 
   public void CanShowInteraction(string Event, Action<bool> completion)
