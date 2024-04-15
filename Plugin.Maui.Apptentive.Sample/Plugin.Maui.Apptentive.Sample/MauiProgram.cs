@@ -24,17 +24,6 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<IApptentive>(Apptentive.Default);
 
-		Action<bool> completionHandler = (success) => {
-			Console.Write("Registration ");
-			Console.Write(success ? "did " : "did not ");
-			Console.WriteLine("succeed.");
-		};
-
-		var Configuration = new Configuration("<#Your Apptentive Key#>", "<#Your Apptentive Secret#>");
-		Configuration.LogLevel = ApptentiveLogLevel.Verbose;
-		Configuration.ShouldSanitizeLogMessages = false;
-		Apptentive.Default.Register(Configuration, completionHandler);
-
 		Apptentive.Default.EventEngaged += OnEventEngaged;
 
 		return builder.Build();

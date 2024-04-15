@@ -4,12 +4,16 @@ using System.IO;
 
 namespace Plugin.Maui.Apptentive;
 
+public partial interface IApptentive {
+    void Register(Configuration Configuration, Action<bool> completion);   
+}
+
 partial class ApptentiveImplementation: IApptentive
 {
     public event EventNotificationHandler? EventEngaged;
 
     public event AuthenticationFailureHandler? AuthenticationFailed;
-    public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication? Application) {}
+
     public void Register(Configuration Configuration, Action<bool> Completion) {
         NSNotificationCenter.DefaultCenter.AddObserver(new NSString("com.apptentive.apptentiveEventEngaged"), HandleEventEngaged, null);
         ApptentiveIOS.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
@@ -25,11 +29,11 @@ partial class ApptentiveImplementation: IApptentive
 		ApptentiveIOS.Shared.Register(IOSConfiguration, Completion);
     }
 
-    public void Engage(string Event) {
-        ApptentiveIOS.Shared.Engage(Event, null);
+    public void Engage(string Event, Action<bool> completion = null) {
+        ApptentiveIOS.Shared.Engage(Event, null, completion);
     }
 
-    public void CanShowInteraction(string Event, Action<bool> completion) {
+    public void CanShowInteraction(string Event, Action<bool> completion = null) {
         ApptentiveIOS.Shared.QueryCanShowInteraction(Event, (bool result) => completion(result));
     }
 
@@ -137,7 +141,7 @@ partial class ApptentiveImplementation: IApptentive
     }
 
     private void HandleAuthenticationFailed(ApptentiveAuthenticationFailureReason reason, string? error)
-    {
-        AuthenticationFailed?.Invoke(reason, error);
+    {        
+        AuthenticationFailed?.Invoke((AuthenticationFailureReason)reason, error);
     }
 }
