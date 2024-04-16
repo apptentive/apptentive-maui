@@ -4,7 +4,7 @@ using AndroidLogLevel = Apptentive.Com.Android.Util.LogLevel;
 namespace Plugin.Maui.Apptentive;
 
 public partial interface IApptentive {
-    void Register(Configuration Configuration, Action<bool> completion, MauiApplication? Application);   
+    void Register(Configuration Configuration, Action<bool> completion, MauiApplication Application);
 }
 
 partial class ApptentiveImplementation : IApptentive
@@ -13,7 +13,6 @@ partial class ApptentiveImplementation : IApptentive
 
   public event AuthenticationFailureHandler? AuthenticationFailed;
 
-  public void Register(Configuration Configuration, Action<bool> completion) {}
   public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication Application)
   {
     var androidConfiguration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
