@@ -4,32 +4,37 @@ using System.IO;
 
 namespace Plugin.Maui.Apptentive;
 
+public partial interface IApptentive {
+    void Register(Configuration Configuration, Action<bool> completion);
+}
+
 partial class ApptentiveImplementation: IApptentive
 {
     public event EventNotificationHandler? EventEngaged;
 
     public event AuthenticationFailureHandler? AuthenticationFailed;
-    public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication? Application) {}
-    public void Register(Configuration Configuration, Action<bool> Completion) {
+
+    public void Register(Configuration Configuration, Action<bool> completion)
+    {
         NSNotificationCenter.DefaultCenter.AddObserver(new NSString("com.apptentive.apptentiveEventEngaged"), HandleEventEngaged, null);
         ApptentiveIOS.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
 
-        ApptentiveIOSConfiguration IOSConfiguration = new ApptentiveIOSConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
-        IOSConfiguration.LogLevel = (ApptentiveKit.iOS.ApptentiveLogLevel)Configuration.LogLevel;
-        IOSConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
-        IOSConfiguration.DistributionName = Configuration.DistributionName;
-        IOSConfiguration.DistributionVersion = Configuration.DistributionVersion;
+        ApptentiveIOSConfiguration iosConfiguration = new ApptentiveIOSConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
+        iosConfiguration.LogLevel = (ApptentiveKit.iOS.ApptentiveLogLevel)Configuration.LogLevel;
+        iosConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
+        iosConfiguration.DistributionName = Configuration.DistributionName;
+        iosConfiguration.DistributionVersion = Configuration.DistributionVersion;
 
         ApptentiveIOS.Shared.Theme = UITheme.None;
 
-		ApptentiveIOS.Shared.Register(IOSConfiguration, Completion);
+		ApptentiveIOS.Shared.Register(iosConfiguration, completion);
     }
 
-    public void Engage(string Event) {
-        ApptentiveIOS.Shared.Engage(Event, null);
+    public void Engage(string Event, Action<bool> completion = null) {
+        ApptentiveIOS.Shared.Engage(Event, null, completion);
     }
 
-    public void CanShowInteraction(string Event, Action<bool> completion) {
+    public void CanShowInteraction(string Event, Action<bool> completion = null) {
         ApptentiveIOS.Shared.QueryCanShowInteraction(Event, (bool result) => completion(result));
     }
 
@@ -137,7 +142,7 @@ partial class ApptentiveImplementation: IApptentive
     }
 
     private void HandleAuthenticationFailed(ApptentiveAuthenticationFailureReason reason, string? error)
-    {
-        AuthenticationFailed?.Invoke(reason, error);
+    {        
+        AuthenticationFailed?.Invoke((AuthenticationFailureReason)reason, error);
     }
 }

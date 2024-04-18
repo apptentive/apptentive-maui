@@ -30,10 +30,22 @@ public static class MauiProgram
 			Console.WriteLine("succeed.");
 		};
 
-		var Configuration = new Configuration("IOS-XAMARIN-IOS-8f46ccae63c0", "1bb31ba70317f17edcad284047483dfa");
-		Configuration.LogLevel = ApptentiveLogLevel.Verbose;
-		Configuration.ShouldSanitizeLogMessages = false;
-		Apptentive.Default.Register(Configuration, completionHandler);
+#if __IOS__
+		var configuration = new Configuration("Your Apptentive iOS App Key", "Your Apptentive iOS App Signature");
+#elif __ANDROID__
+		var configuration = new Configuration("Your Apptentive Android App Key", "Your Apptentive Android App Signature");
+#endif
+
+#if DEBUG
+		configuration.LogLevel = ApptentiveLogLevel.Verbose;
+		configuration.ShouldSanitizeLogMessages = false;
+#endif
+
+#if __IOS__
+		Apptentive.Default.Register(configuration, completionHandler);
+#elif __ANDROID__
+		Apptentive.Default.Register(configuration, completionHandler, MainApplication.Current);
+#endif
 
 		Apptentive.Default.EventEngaged += OnEventEngaged;
 
