@@ -31,7 +31,7 @@ public static class MauiProgram
 		};
 
 #if __IOS__
-		var configuration = new Configuration("Your Apptentive iOS App Key", "Your Apptentive iOS App Signature");
+		var configuration = new Configuration("IOS-OPERATOR-7ee0ab6dcbae", "b6ce9ec3ceae13cacebd2e85ff235b2e");
 #elif __ANDROID__
 		var configuration = new Configuration("Your Apptentive Android App Key", "Your Apptentive Android App Signature");
 #endif
