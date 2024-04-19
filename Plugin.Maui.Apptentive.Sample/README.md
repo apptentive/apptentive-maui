@@ -18,7 +18,7 @@ After installing the .NET framework, You will need to install the following work
 - maui-mobile 
 - maui
 
-## Build and Run
+## Build and Run for iOS
 
 To build the app, move to the (inner) Plugin.Maui.Apptentive.Sample
 subdirectory (two levels down from the root of the repo) and run the
@@ -29,3 +29,9 @@ following:
 You can also supply a device UDID (`xcrun simctl list` to show simulators):
 
 `dotnet build -f:net8.0-ios -t:Run /p:_DeviceName=:v2:udid=<UDID>`
+
+## Build and Run for Android
+
+To build and run for Android, start an emulator and from the same directory as above, enter:
+
+`dotnet build -f:net8.0-android -t:Run`
