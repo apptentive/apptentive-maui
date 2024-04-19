@@ -466,7 +466,7 @@ enum ApptentiveLogLevel : NSUInteger;
 + (NSDictionary * _Nonnull)extendedDataLocationForLatitude:(double)latitude longitude:(double)longitude SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Extended event data are no longer supported.");
 + (NSDictionary * _Nonnull)extendedDataCommerceWithTransactionID:(NSString * _Nullable)transactionID affiliation:(NSString * _Nullable)affiliation revenue:(NSNumber * _Nullable)revenue shipping:(NSNumber * _Nullable)shipping tax:(NSNumber * _Nullable)tax currency:(NSString * _Nullable)currency commerceItems:(NSArray<NSDictionary *> * _Nullable)commerceItems SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Extended event data are no longer supported.");
 + (NSDictionary * _Nonnull)extendedDataCommerceItemWithItemID:(NSString * _Nullable)itemID name:(NSString * _Nullable)name category:(NSString * _Nullable)category price:(NSNumber * _Nullable)price quantity:(NSNumber * _Nullable)quantity currency:(NSString * _Nullable)currency SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Extended event data are no longer supported.");
-- (void)queryCanShowMessageCenterWithCompletion:(void (^ _Nonnull)(BOOL))completion SWIFT_DEPRECATED_MSG("This feature is not implemented and will always result in false.");
+- (void)queryCanShowMessageCenterWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)presentMessageCenterFromViewController:(UIViewController * _Nullable)viewController;
 - (void)presentMessageCenterFromViewController:(UIViewController * _Nullable)viewController completion:(void (^ _Nullable)(BOOL))completion;
 - (void)presentMessageCenterFromViewController:(UIViewController * _Nullable)viewController withCustomData:(NSDictionary * _Nullable)customData;
@@ -662,16 +662,20 @@ SWIFT_CLASS("_TtC13ApptentiveKit10DialogView")
 @property (nonatomic) BOOL separatorsAreHidden;
 /// The color of the separators.
 @property (nonatomic, strong) UIColor * _Nonnull separatorColor;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+/// The amount by which to inset the header image from view’s edges and the title label.
+@property (nonatomic) UIEdgeInsets imageInset;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class UIResponder;
 
 /// A class used to display TextModal (“Note”) and EnjoymentDialog (“Love Dialog”) interactions.
 SWIFT_CLASS("_TtC13ApptentiveKit20DialogViewController")
 @interface DialogViewController : UIViewController
+@property (nonatomic, readonly, strong) UIResponder * _Nullable nextResponder;
 - (void)viewDidLoad;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)viewDidAppear:(BOOL)animated;
@@ -683,6 +687,12 @@ SWIFT_CLASS("_TtC13ApptentiveKit20DialogViewController")
 SWIFT_CLASS("_TtC13ApptentiveKit13DismissButton")
 @interface DismissButton : DialogButton
 @end
+
+
+SWIFT_CLASS("_TtC13ApptentiveKit29EnjoymentDialogViewController")
+@interface EnjoymentDialogViewController : DialogViewController
+@end
+
 
 
 /// A button used to launch a subsequent interaction from a TextModal (“Note”) interaction.
@@ -701,6 +711,11 @@ SWIFT_CLASS("_TtC13ApptentiveKit18TermsAndConditions") SWIFT_DEPRECATED_MSG("Thi
 @interface TermsAndConditions : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC13ApptentiveKit23TextModalViewController")
+@interface TextModalViewController : DialogViewController
 @end
 
 
@@ -1056,12 +1071,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) UIImage * _Nullable ap
 @end
 
 
+
+
 @interface UITableView (SWIFT_EXTENSION(ApptentiveKit))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) NSInteger apptentiveStyle;)
 + (NSInteger)apptentiveStyle SWIFT_WARN_UNUSED_RESULT;
 + (void)setApptentiveStyle:(NSInteger)newValue;
 @end
-
 
 enum ToolbarMode : NSInteger;
 
