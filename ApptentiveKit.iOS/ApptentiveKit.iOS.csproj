@@ -7,6 +7,20 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<NoBindingEmbedding>true</NoBindingEmbedding>
     <OutputType>Library</OutputType>
+
+		<Authors>Alchemer Digital Team</Authors>
+    <Version>6.7.0</Version>
+		<Copyright>Copyright © 2024 Alchemer LLC and contributors</Copyright>
+		<IsPackable>True</IsPackable>
+		<RepositoryUrl>https://github.com/apptentive/apptentive-maui</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>dotnet-maui;maui;plugin;</PackageTags>
+		<IncludeSymbols>True</IncludeSymbols>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Title>ApptentiveKit.iOS</Title>
+		<Description>Wrapper for ApptentiveKit iOS SDK for use with Plugin.Maui.Apptentive project.</Description>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
