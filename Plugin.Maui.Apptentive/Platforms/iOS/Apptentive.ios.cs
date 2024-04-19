@@ -17,116 +17,116 @@ partial class ApptentiveImplementation: IApptentive
     public void Register(Configuration Configuration, Action<bool> completion)
     {
         NSNotificationCenter.DefaultCenter.AddObserver(new NSString("com.apptentive.apptentiveEventEngaged"), HandleEventEngaged, null);
-        ApptentiveIOS.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
+        ApptentiveKit.iOS.Apptentive.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
 
-        ApptentiveIOSConfiguration iosConfiguration = new ApptentiveIOSConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
+        ApptentiveConfiguration iosConfiguration = new ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
         iosConfiguration.LogLevel = (ApptentiveKit.iOS.ApptentiveLogLevel)Configuration.LogLevel;
         iosConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
         iosConfiguration.DistributionName = Configuration.DistributionName;
         iosConfiguration.DistributionVersion = Configuration.DistributionVersion;
 
-        ApptentiveIOS.Shared.Theme = UITheme.None;
+        ApptentiveKit.iOS.Apptentive.Shared.Theme = UITheme.None;
 
-		ApptentiveIOS.Shared.Register(iosConfiguration, completion);
+		ApptentiveKit.iOS.Apptentive.Shared.Register(iosConfiguration, completion);
     }
 
     public void Engage(string Event, Action<bool> completion = null) {
-        ApptentiveIOS.Shared.Engage(Event, null, completion);
+        ApptentiveKit.iOS.Apptentive.Shared.Engage(Event, null, completion);
     }
 
     public void CanShowInteraction(string Event, Action<bool> completion = null) {
-        ApptentiveIOS.Shared.QueryCanShowInteraction(Event, (bool result) => completion(result));
+        ApptentiveKit.iOS.Apptentive.Shared.QueryCanShowInteraction(Event, (bool result) => completion(result));
     }
 
     public void PresentMessageCenter() {
-        ApptentiveIOS.Shared.PresentMessageCenter(null);
+        ApptentiveKit.iOS.Apptentive.Shared.PresentMessageCenter(null);
     }
 
     public void CanShowMessageCenter(Action<bool> completion) {
-        ApptentiveIOS.Shared.QueryCanShowMessageCenter((bool result) => completion(result));
+        ApptentiveKit.iOS.Apptentive.Shared.QueryCanShowMessageCenter((bool result) => completion(result));
     }
 
     public void SetPersonName(string PersonName) {
-        ApptentiveIOS.Shared.PersonName = PersonName;
+        ApptentiveKit.iOS.Apptentive.Shared.PersonName = PersonName;
     }
 
     public void setPersonEmailAddress(string PersonEmailAddress) {
-        ApptentiveIOS.Shared.PersonEmailAddress = PersonEmailAddress;
+        ApptentiveKit.iOS.Apptentive.Shared.PersonEmailAddress = PersonEmailAddress;
     }
 
     public void addCustomPersonData(string Key, string Value) {
-        ApptentiveIOS.Shared.AddCustomPersonData(Value, Key);
+        ApptentiveKit.iOS.Apptentive.Shared.AddCustomPersonData(Value, Key);
     }
 
     public void addCustomPersonData(string Key, double Value) {
-        ApptentiveIOS.Shared.AddCustomPersonData(new NSNumber(Value), Key);
+        ApptentiveKit.iOS.Apptentive.Shared.AddCustomPersonData(new NSNumber(Value), Key);
     }
 
     // TODO: Add overloads for int, float, etc.?
 
     public void addCustomPersonData(string Key, bool Value) {
-        ApptentiveIOS.Shared.AddCustomPersonData(Value, Key);
+        ApptentiveKit.iOS.Apptentive.Shared.AddCustomPersonData(Value, Key);
     }
 
     public void removeCustomPersonData(string Key) {
-        ApptentiveIOS.Shared.RemoveCustomPersonData(Key);
+        ApptentiveKit.iOS.Apptentive.Shared.RemoveCustomPersonData(Key);
     }
 
     public void addCustomDeviceData(string Key, string Value) {
-        ApptentiveIOS.Shared.AddCustomDeviceData(Value, Key);
+        ApptentiveKit.iOS.Apptentive.Shared.AddCustomDeviceData(Value, Key);
     }
 
     public void addCustomDeviceData(string Key, double Value) {
-        ApptentiveIOS.Shared.AddCustomDeviceData(new NSNumber(Value), Key);
+        ApptentiveKit.iOS.Apptentive.Shared.AddCustomDeviceData(new NSNumber(Value), Key);
     }
 
     // TODO: Add overloads for int, float, etc.?
 
     public void addCustomDeviceData(string Key, bool Value) {
-        ApptentiveIOS.Shared.AddCustomDeviceData(Value, Key);
+        ApptentiveKit.iOS.Apptentive.Shared.AddCustomDeviceData(Value, Key);
 
     }
 
     public void removeCustomDeviceData(string Key) {
-        ApptentiveIOS.Shared.RemoveCustomDeviceData(Key);
+        ApptentiveKit.iOS.Apptentive.Shared.RemoveCustomDeviceData(Key);
     }
 
     // TODO: Push notification integration
     // This should maybe be platform-specific, where they `using` the native module. 
 
     public int UnreadMessageCount { get {
-        return (int)ApptentiveIOS.Shared.UnreadMessageCount;
+        return (int)ApptentiveKit.iOS.Apptentive.Shared.UnreadMessageCount;
     }}
 
     public void sentAttachmentText(string Text) {
-        ApptentiveIOS.Shared.SendAttachment(Text);
+        ApptentiveKit.iOS.Apptentive.Shared.SendAttachment(Text);
     }
 
     //public void sendAttachmentImage(System.Drawing.Image image) {
         // FIXME: Not clear how to turn System.Drawing.Image into UIImage. 
-        //ApptentiveIOS.Shared.sendAttachment()
+        //ApptentiveKit.iOS.Apptentive.Shared.sendAttachment()
     //}
 
     public void sendAttachmentFile(System.IO.Stream File, string MimeType) {
         var Data = NSData.FromStream(File);
 
         if (Data != null) {
-            ApptentiveIOS.Shared.SendAttachment(Data, MimeType);
+            ApptentiveKit.iOS.Apptentive.Shared.SendAttachment(Data, MimeType);
         } else {
             // FIXME: log an error?
         }
     }
 
     public void LogIn(string Token, Action<bool, string?> Completion) {
-        ApptentiveIOS.Shared.LogIn(Token, (bool Success, NSError Error) => Completion(Success, Error?.LocalizedDescription) );
+        ApptentiveKit.iOS.Apptentive.Shared.LogIn(Token, (bool Success, NSError Error) => Completion(Success, Error?.LocalizedDescription) );
     }
 
     public void LogOut() {
-        ApptentiveIOS.Shared.LogOut();
+        ApptentiveKit.iOS.Apptentive.Shared.LogOut();
     }
 
     public void UpdateToken(string Token, Action<bool>? Completion) {
-        ApptentiveIOS.Shared.UpdateToken(Token, Completion);
+        ApptentiveKit.iOS.Apptentive.Shared.UpdateToken(Token, Completion);
     }
 
     private void HandleEventEngaged(NSNotification notification)
