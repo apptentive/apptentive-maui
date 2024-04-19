@@ -25,7 +25,7 @@
     <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2" />
   </ItemGroup>
 <ItemGroup>
-  <AndroidLibrary Update="apptentive-feedback-6.1.0.aar">
+  <AndroidLibrary Update="apptentive-feedback-6.7.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
