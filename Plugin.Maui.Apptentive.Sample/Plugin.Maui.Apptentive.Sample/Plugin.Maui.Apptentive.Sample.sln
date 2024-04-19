@@ -22,4 +22,8 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01D65E75-E995-4C16-9B0C-5D66FFE67D58}
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		description = Developer/Sample app for Plugin.Maui.Apptentive project.
+		version = 6.7.0
+	EndGlobalSection
 EndGlobal
