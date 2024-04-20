@@ -9,7 +9,7 @@
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.7" />
   </ItemGroup>
   <ItemGroup>
-  <AndroidLibrary Update="apptentive-core-ui-6.1.0-xamarin-fixes03.aar">
+  <AndroidLibrary Update="apptentive-core-ui-6.7.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
