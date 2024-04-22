@@ -14,7 +14,7 @@
 		<IsPackable>True</IsPackable>
 		<RepositoryUrl>https://github.com/apptentive/apptentive-maui</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>dotnet-maui;maui;plugin;</PackageTags>
+		<PackageTags>dotnet-maui;maui;plugin;apptentive;alchemer;ios</PackageTags>
 		<IncludeSymbols>True</IncludeSymbols>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
