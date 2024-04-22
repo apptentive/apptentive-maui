@@ -3,7 +3,7 @@ using System.IO;
 namespace Plugin.Maui.Apptentive;
 
 public partial interface IApptentive {
-    void Engage(string Event, Action<bool> onCompletion = null);
+    void Engage(string Event, Action<bool>? onCompletion = null);
 
     void CanShowInteraction(string Event, Action<bool> completion);
 

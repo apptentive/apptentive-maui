@@ -24,7 +24,7 @@ partial class ApptentiveImplementation : IApptentive
      ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
   }
 
-  public void Engage(string Event, Action<bool> onCompletion = null)
+  public void Engage(string Event, Action<bool>? onCompletion = null)
   {
     ApptentiveSDK.Apptentive.Engage(Event, null, new EngagementCallback(onCompletion));
   }
