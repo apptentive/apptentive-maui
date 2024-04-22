@@ -25,7 +25,7 @@ namespace ApptentiveSDK
         /// <param name="configuration">The ApptentiveConfiguration object.</param>
         /// <param name="onCompletion">Called after successful or failed registration is conducted.</param>
 
-        public static void Register(Application application, ApptentiveConfiguration configuration, Action<bool> onCompletion = null)
+        public static void Register(Application application, ApptentiveConfiguration configuration, Action<bool>? onCompletion = null)
         {
             ApptentiveSDK.Apptentive.Register(application, configuration, new RegisterCallback(onCompletion));
         }
@@ -37,7 +37,7 @@ namespace ApptentiveSDK
         /// <param name="onCompletion">Called after we check if a interaction can be presented or not.</param>
         /// <param name="customData">A Map of String keys to Object values. Objects may be Strings, Numbers, or Booleans.If any message is sent by the Person, this data is sent with it, and then cleared. If no message is sent, this data is discarded.</param>
         /// <param name="eventName">The event's string value</param>
-        public static void Engage(String eventName, IDictionary<string, Java.Lang.Object> customData = null, Action<bool> onCompletion = null)
+        public static void Engage(String eventName, IDictionary<string, Java.Lang.Object>? customData = null, Action<bool>? onCompletion = null)
         {
             ApptentiveSDK.Apptentive.Engage(eventName, customData, new EngagementCallback(onCompletion));
         }
@@ -50,7 +50,7 @@ namespace ApptentiveSDK
         /// </summary>
         /// <param name="onCompletion">Called after we check to see if Message Center can be displayed, but before it is displayed.</param>
         /// <param name="customData">A Map of String keys to Object values. Objects may be Strings, Numbers, or Booleans.If any message is sent by the Person, this data is sent with it, and then cleared. If no message is sent, this data is discarded.</param>
-        public static void ShowMessageCenter(Action<bool> onCompletion, IDictionary<string, Java.Lang.Object> customData = null)
+        public static void ShowMessageCenter(Action<bool> onCompletion, IDictionary<string, Java.Lang.Object>? customData = null)
         {
             ApptentiveSDK.Apptentive.ShowMessageCenter(customData, new EngagementCallback(onCompletion));
         }
@@ -90,7 +90,7 @@ namespace ApptentiveSDK
         /// `null`.</param>
         /// <param name="intent">An Intent containing the Apptentive Push data. Pass in what you receive
         /// in the Service or BroadcastReceiver that is used by your chosen push provider.</param>
-        public static void BuildPendingIntentFromPushNotification(Context context, Action<PendingIntent> onCompletion, Intent intent)
+        public static void BuildPendingIntentFromPushNotification(Context context, Action<PendingIntent?> onCompletion, Intent intent)
         {
             ApptentiveSDK.Apptentive.BuildPendingIntentFromPushNotification(context, new PendingIntentCallback(onCompletion), intent);
         }
@@ -111,7 +111,7 @@ namespace ApptentiveSDK
         /// <param name="data">Contains the Apptentive
         /// Push data. Pass in what you receive in the the Service or BroadcastReceiver
         /// that is used by your chosen push provider.</param>
-        public static void BuildPendingIntentFromPushNotification(Context context, Action<PendingIntent> onCompletion, IDictionary<string, string> data)
+        public static void BuildPendingIntentFromPushNotification(Context context, Action<PendingIntent?> onCompletion, IDictionary<string, string> data)
         {
             ApptentiveSDK.Apptentive.BuildPendingIntentFromPushNotification(context, new PendingIntentCallback(onCompletion), data);
         }
@@ -143,7 +143,7 @@ namespace ApptentiveSDK
             this.onCompletion = onCompletion;
         }
 
-        public void OnPendingIntent(PendingIntent pendingIntent)
+        public void OnPendingIntent(PendingIntent? pendingIntent)
         {
             if (pendingIntent != null)
             {
@@ -165,9 +165,9 @@ namespace ApptentiveSDK
             this.onCompletion = onCompletion;
         }
 
-        public void OnFinish(Java.Lang.Boolean result)
+        public void OnFinish(Java.Lang.Boolean? result)
         {
-            if (result.BooleanValue())
+            if (result?.BooleanValue() ?? false)
             {
                 onCompletion?.Invoke(true);
             }
@@ -181,15 +181,15 @@ namespace ApptentiveSDK
 
     public class  RegisterCallback : Java.Lang.Object, IRegisterCallback
     {
-        private readonly Action<bool> onCompletion;
+        private readonly Action<bool>? onCompletion;
 
-        public RegisterCallback(Action<bool> onCompletion)
+        public RegisterCallback(Action<bool>? onCompletion)
         {
             this.onCompletion = onCompletion;
         }
 
 
-        public void OnComplete(RegisterResult result)
+        public void OnComplete(RegisterResult? result)
         {
             if (result is RegisterResult.Success)
             {
@@ -206,15 +206,15 @@ namespace ApptentiveSDK
 
     public class EngagementCallback : Java.Lang.Object, IEngagementCallback
     {
-        private readonly Action<bool> onCompletion;
+        private readonly Action<bool>? onCompletion;
 
-        public EngagementCallback(Action<bool> onCompletion)
+        public EngagementCallback(Action<bool>? onCompletion)
         {
             this.onCompletion = onCompletion;
         }
 
     
-        public void OnComplete(EngagementResult result)
+        public void OnComplete(EngagementResult? result)
         {
             if (result is EngagementResult.InteractionShown)
             {
