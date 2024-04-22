@@ -12,10 +12,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Plugin.Maui.Apptentive.Sample</ApplicationTitle>
+		<ApplicationTitle>Apptentive Maui Sample</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.plugin.maui.apptentive.sample</ApplicationId>
+		<ApplicationId>com.apptentive.Sample</ApplicationId>
 		<ApplicationIdGuid>3bcaf0ea-d4c2-4d95-9100-97dd6923f58b</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -54,7 +54,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\Plugin.Maui.Apptentive\Plugin.Maui.Apptentive.csproj" />
+		<ProjectReference Include="..\Plugin.Maui.Apptentive\Plugin.Maui.Apptentive.csproj" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
 	</ItemGroup>
