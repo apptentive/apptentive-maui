@@ -9,7 +9,7 @@
     <PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.4.10" />
   </ItemGroup>
   <ItemGroup>
-  <AndroidLibrary Update="apptentive-notes-6.1.0.aar">
+  <AndroidLibrary Update="apptentive-notes-6.7.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
