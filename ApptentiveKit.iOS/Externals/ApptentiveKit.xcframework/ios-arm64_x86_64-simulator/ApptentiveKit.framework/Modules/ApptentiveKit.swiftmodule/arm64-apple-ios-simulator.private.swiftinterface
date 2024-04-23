@@ -19,10 +19,39 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DialogViewController : UIKit.UIViewController, ApptentiveKit.DialogViewModelDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var next: UIKit.UIResponder? {
+    @objc get
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func dismiss()
+  @_Concurrency.MainActor(unsafe) public func dialogViewModel(_: ApptentiveKit.DialogViewModel, didLoadImage imageData: ApptentiveKit.DialogViewModel.Image)
   @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class EnjoymentDialogViewController : ApptentiveKit.DialogViewController {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class TextModalViewController : ApptentiveKit.DialogViewController {
+  @objc deinit
+}
+extension ApptentiveKit.DialogViewModel {
+  public enum Image : Swift.Equatable {
+    case none
+    case loading(altText: Swift.String, layout: ApptentiveKit.DialogViewModel.Image.Layout)
+    case loaded(image: UIKit.UIImage, acessibilityLabel: Swift.String, layout: ApptentiveKit.DialogViewModel.Image.Layout, maxHeight: CoreFoundation.CGFloat)
+    public enum Layout : Swift.String {
+      case fullWidth
+      case leading
+      case trailing
+      case center
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public static func == (a: ApptentiveKit.DialogViewModel.Image, b: ApptentiveKit.DialogViewModel.Image) -> Swift.Bool
+  }
 }
 extension ApptentiveKit.DialogViewModel {
   @_hasMissingDesignatedInitializers public class Action {
@@ -42,6 +71,28 @@ extension ApptentiveKit.DialogViewModel {
     }
     @objc deinit
   }
+}
+public enum HTMLTextAlignment : Swift.String {
+  case center
+  case left
+  case right
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SystemFontNames : Swift.String {
+  case html
+  case os
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Swift.String {
+  public func attributedString(withFont font: UIKit.UIFont, alignment: ApptentiveKit.HTMLTextAlignment) -> Foundation.NSMutableAttributedString?
 }
 extension ApptentiveKit.SurveyViewModel {
   @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class RangeQuestion : ApptentiveKit.SurveyViewModel.Question {
@@ -167,6 +218,7 @@ extension ApptentiveKit.SurveyViewModel {
     }
     @_hasMissingDesignatedInitializers public class Choice {
       final public let label: Swift.String
+      public var htmlLabel: Foundation.NSAttributedString?
       final public let placeholderText: Swift.String?
       final public let supportsOther: Swift.Bool
       public var isSelected: Swift.Bool {
@@ -197,6 +249,7 @@ extension ApptentiveKit.ApptentiveLogger {
   public static var targeting: ApptentiveKit.ApptentiveLogger
   public static var messages: ApptentiveKit.ApptentiveLogger
   public static var attachments: ApptentiveKit.ApptentiveLogger
+  public static var resources: ApptentiveKit.ApptentiveLogger
   public static var logLevel: ApptentiveKit.LogLevel {
     get
     set
@@ -329,6 +382,7 @@ public enum ApptentiveError : Swift.Error, Foundation.LocalizedError {
   case invalidEncryptionKey
   case noActiveConversation
   case authenticationFailed(reason: ApptentiveKit.AuthenticationFailureReason?, responseString: Swift.String?)
+  case resourceNotDecodableAsImage
   public var errorDescription: Swift.String? {
     get
   }
@@ -478,6 +532,7 @@ public protocol MessageCenterViewModelDelegate : AnyObject {
   func messageCenterViewModel(_: ApptentiveKit.MessageCenterViewModel, didFailToSendMessageWith error: any Swift.Error)
   func messageCenterViewModel(_: ApptentiveKit.MessageCenterViewModel, attachmentDownloadDidFinishAt index: Swift.Int, inMessageAt indexPath: Foundation.IndexPath)
   func messageCenterViewModel(_: ApptentiveKit.MessageCenterViewModel, attachmentDownloadDidFailAt index: Swift.Int, inMessageAt indexPath: Foundation.IndexPath, with error: any Swift.Error)
+  func messageCenterViewModel(_: ApptentiveKit.MessageCenterViewModel, profilePhoto: UIKit.UIImage, didDownloadFor indexPath: Foundation.IndexPath)
 }
 @_hasMissingDesignatedInitializers public class MessageCenterViewModel {
   final public let headingTitle: Swift.String
@@ -586,6 +641,8 @@ public protocol MessageCenterViewModelDelegate : AnyObject {
     get
   }
   public func sendMessage()
+  public func getGreetingImage(completion: @escaping (UIKit.UIImage) -> Swift.Void)
+  public func getProfilePhoto(for indexPath: Foundation.IndexPath)
   @objc deinit
 }
 public enum MessageCenterViewModelError : Swift.Error {
@@ -646,7 +703,7 @@ open class InteractionPresenter {
   open func presentMessageCenter(with viewModel: ApptentiveKit.MessageCenterViewModel) throws
   open func presentSurvey(with viewModel: ApptentiveKit.SurveyViewModel) throws
   open func presentEnjoymentDialog(with viewModel: ApptentiveKit.DialogViewModel) throws
-  open func presentTextModal(with viewModel: ApptentiveKit.DialogViewModel) throws
+  open func presentTextModal(with viewModel: ApptentiveKit.DialogViewModel, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
   open func presentViewController(_ viewControllerToPresent: UIKit.UIViewController, completion: (() -> Swift.Void)? = {}) throws
   public var validatedPresentingViewController: UIKit.UIViewController? {
     get
@@ -666,6 +723,7 @@ extension Foundation.NSNotification.Name {
   public static let apptentiveEventEngaged: Foundation.Notification.Name
 }
 public protocol DialogViewModelDelegate : AnyObject {
+  func dialogViewModel(_: ApptentiveKit.DialogViewModel, didLoadImage: ApptentiveKit.DialogViewModel.Image)
   func dismiss()
 }
 @_hasMissingDesignatedInitializers public class DialogViewModel {
@@ -673,6 +731,12 @@ public protocol DialogViewModelDelegate : AnyObject {
   final public let message: Swift.String?
   final public let dialogType: ApptentiveKit.DialogViewModel.DialogType
   final public let actions: [ApptentiveKit.DialogViewModel.Action]
+  public var dialogContainsImage: Swift.Bool
+  public var image: ApptentiveKit.DialogViewModel.Image {
+    get
+    set
+  }
+  public var maxHeight: Swift.Int
   weak public var delegate: (any ApptentiveKit.DialogViewModelDelegate)?
   public func buttonSelected(at position: Swift.Int)
   public func launch()
@@ -688,7 +752,7 @@ public protocol DialogViewModelDelegate : AnyObject {
   }
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DialogView : UIKit.UIView {
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DialogView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public var titleTextColor: UIKit.UIColor
   @objc @_Concurrency.MainActor(unsafe) dynamic public var messageTextColor: UIKit.UIColor
   @objc @_Concurrency.MainActor(unsafe) dynamic public var titleFont: UIKit.UIFont
@@ -699,6 +763,10 @@ public protocol DialogViewModelDelegate : AnyObject {
   @objc @_Concurrency.MainActor(unsafe) dynamic public var buttonInset: UIKit.UIEdgeInsets
   @objc @_Concurrency.MainActor(unsafe) dynamic public var separatorsAreHidden: Swift.Bool
   @objc @_Concurrency.MainActor(unsafe) dynamic public var separatorColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var imageInset: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @objc deinit
@@ -764,7 +832,7 @@ extension ApptentiveKit.Apptentive {
   @objc(extendedDataCommerceWithTransactionID:affiliation:revenue:shipping:tax:currency:commerceItems:) dynamic public class func extendedData(transactionID: Swift.String?, affiliation: Swift.String?, revenue: Foundation.NSNumber?, shipping: Foundation.NSNumber?, tax: Foundation.NSNumber?, currency: Swift.String?, commerceItems: [[Swift.AnyHashable : Any]]?) -> [Swift.AnyHashable : Any]
   @available(*, deprecated, message: "Extended event data are no longer supported.")
   @objc(extendedDataCommerceItemWithItemID:name:category:price:quantity:currency:) dynamic public class func extendedData(itemID: Swift.String?, name: Swift.String?, category: Swift.String?, price: Foundation.NSNumber?, quantity: Foundation.NSNumber?, currency: Swift.String?) -> [Swift.AnyHashable : Any]
-  @available(*, deprecated, message: "This feature is not implemented and will always result in false.")
+  @available(swift, deprecated: 1.0, message: "Use the 'canShowMessageCenter(completion:)' method instead.")
   @objc dynamic public func queryCanShowMessageCenter(completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc(presentMessageCenterFromViewController:) dynamic public func presentMessageCenterCompat(from viewController: UIKit.UIViewController?)
   @available(swift, deprecated: 1.0, message: "Use the method whose completion handler takes a Result<Bool, Error> parameter.")
@@ -1234,9 +1302,18 @@ extension UIKit.UIToolbar {
 extension CoreFoundation.CGFloat {
   public static var apptentiveButtonBorderWidth: CoreFoundation.CGFloat
 }
+extension ApptentiveKit.DialogViewModel.Image.Layout : Swift.Equatable {}
+extension ApptentiveKit.DialogViewModel.Image.Layout : Swift.Hashable {}
+extension ApptentiveKit.DialogViewModel.Image.Layout : Swift.RawRepresentable {}
 extension ApptentiveKit.DialogViewModel.Action.ActionType : Swift.Equatable {}
 extension ApptentiveKit.DialogViewModel.Action.ActionType : Swift.Hashable {}
 extension ApptentiveKit.DialogViewModel.Action.ActionType : Swift.RawRepresentable {}
+extension ApptentiveKit.HTMLTextAlignment : Swift.Equatable {}
+extension ApptentiveKit.HTMLTextAlignment : Swift.Hashable {}
+extension ApptentiveKit.HTMLTextAlignment : Swift.RawRepresentable {}
+extension ApptentiveKit.SystemFontNames : Swift.Equatable {}
+extension ApptentiveKit.SystemFontNames : Swift.Hashable {}
+extension ApptentiveKit.SystemFontNames : Swift.RawRepresentable {}
 extension ApptentiveKit.MessageCenterViewModel.Message.SentStatus : Swift.Hashable {}
 extension ApptentiveKit.SurveyViewModel.ChoiceQuestion.SelectionStyle : Swift.Equatable {}
 extension ApptentiveKit.SurveyViewModel.ChoiceQuestion.SelectionStyle : Swift.Hashable {}
