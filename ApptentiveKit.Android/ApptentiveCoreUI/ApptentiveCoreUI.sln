@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1706.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveCoreUI", "ApptentiveCoreUI.csproj", "{7BEAFC92-A83A-4E4E-A98E-4595F3632DBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveCoreUI", "ApptentiveCoreUI\ApptentiveCoreUI.csproj", "{F161DA96-8BB5-41CD-8E06-AEA61D6E515A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7BEAFC92-A83A-4E4E-A98E-4595F3632DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BEAFC92-A83A-4E4E-A98E-4595F3632DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BEAFC92-A83A-4E4E-A98E-4595F3632DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BEAFC92-A83A-4E4E-A98E-4595F3632DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F161DA96-8BB5-41CD-8E06-AEA61D6E515A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F161DA96-8BB5-41CD-8E06-AEA61D6E515A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F161DA96-8BB5-41CD-8E06-AEA61D6E515A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F161DA96-8BB5-41CD-8E06-AEA61D6E515A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9B27B8F0-9F68-4BD5-A39C-15D0610FC938}
+		SolutionGuid = {D1330317-C854-4163-892B-C707088D2131}
 	EndGlobalSection
 EndGlobal
