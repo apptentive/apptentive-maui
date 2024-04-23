@@ -53,16 +53,16 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCoreUI\ApptentiveCoreUI\ApptentiveCoreUI.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveInAppReview\ApptentiveInAppReview\ApptentiveInAppReview.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveMessageCenter\ApptentiveMessageCenter\ApptentiveMessageCenter.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveNavigateToLink\ApptentiveNavigateToLink\ApptentiveNavigateToLink.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveNotes\ApptentiveNotes\ApptentiveNotes.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveRatings\ApptentiveRatings\ApptentiveRatings.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveSurvey\ApptentiveSurvey\ApptentiveSurvey.csproj" />
-	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveFeedback\ApptentiveFeedback\ApptentiveFeedback.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCoreUI\ApptentiveCoreUI.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveInAppReview\ApptentiveInAppReview.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveMessageCenter\ApptentiveMessageCenter.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveNavigateToLink\ApptentiveNavigateToLink.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveNotes\ApptentiveNotes.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveRatings\ApptentiveRatings.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveSurvey\ApptentiveSurvey.csproj" />
+	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveFeedback\ApptentiveFeedback.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
