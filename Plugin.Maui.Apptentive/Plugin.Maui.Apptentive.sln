@@ -5,8 +5,6 @@ VisualStudioVersion = 25.0.1706.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Maui.Apptentive", "Plugin.Maui.Apptentive.csproj", "{AD678016-E0B9-4EF8-90C3-D8BE22DA374D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveKit.iOS", "..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj", "{22178E63-67B9-46F5-AD00-4A423779E1C2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveSample", "ApptentiveSample.csproj", "{1D0FD7B6-5A38-40F3-AA08-DD648C47ACFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApptentiveFeedback", "..\..\ApptentiveFeedback\ApptentiveFeedback\ApptentiveFeedback.csproj", "{9FEB56A5-44F4-416B-A51D-88C715629AA6}"
