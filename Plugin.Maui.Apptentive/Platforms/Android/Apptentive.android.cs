@@ -20,6 +20,7 @@ partial class ApptentiveImplementation : IApptentive
      androidConfiguration.DistributionName = Configuration.DistributionName;
      androidConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
      androidConfiguration.ShouldInheritAppTheme = Configuration.ShouldInheritAppTheme;
+     androidConfiguration.CustomAppStoreURL = Configuration.CustomAppStoreURL;
      //TODO: Log Level is not reliably accessible.
      ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
   }
