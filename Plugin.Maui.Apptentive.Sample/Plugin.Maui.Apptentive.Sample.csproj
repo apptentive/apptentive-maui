@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
@@ -88,12 +88,12 @@
 	  <PackageReference Include ="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
 	  <PackageReference Include="Xamarin.Google.Android.Material"  Version="1.10.0.3" />
 	  <PackageReference Include="GoogleGson" Version="2.10.1.8"/>
-	   <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0.23"/>
-	    <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2"/>
-		 <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx"  Version="1.6.2.2"/>
-		 <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.7"/>
-		 <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.7.0.1"/>
-		 <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.7.0.1"/>
+	  <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0.23"/>
+	  <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2"/>
+	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx"  Version="1.6.2.2"/>
+	  <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.7"/>
+	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.7.0.1"/>
+	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.7.0.1"/>
 	</ItemGroup>
 	<ItemGroup>
     <ProguardConfiguration Include="proguard.cfg" />

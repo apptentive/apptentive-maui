@@ -26,7 +26,7 @@ To build the app, move to the (inner) Plugin.Maui.Apptentive.Sample
 subdirectory (two levels down from the root of the repo) and run the
 following:
 
-# ios
+### ios
 
 `dotnet build -f:net8.0-ios -t:Run`
 
@@ -34,7 +34,7 @@ You can also supply a device UDID (`xcrun simctl list` to show simulators):
 
 `dotnet build -f:net8.0-ios -t:Run /p:_DeviceName=:v2:udid=<UDID>`
 
-# android
+### android
 
 debug: 
 `dotnet build -t:run -f:net8.0-android`
