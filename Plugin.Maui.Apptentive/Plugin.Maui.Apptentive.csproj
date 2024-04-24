@@ -49,7 +49,9 @@
 	</ItemGroup>
 
   	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
-	    <ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" />
+	    <PackageReference Include="Apptentive.iOS" Version="6.7.0" />
+		<!-- For development:
+		<ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" /> -->
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
