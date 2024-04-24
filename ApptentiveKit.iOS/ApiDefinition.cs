@@ -17,12 +17,12 @@ namespace ApptentiveKit.iOS
 	// @interface Apptentive : NSObject
 	[BaseType (typeof(NSObject), Name = "_TtC13ApptentiveKit10Apptentive")]
 	[DisableDefaultCtor]
-	interface ApptentiveIOS : IUNUserNotificationCenterDelegate
+	interface Apptentive : IUNUserNotificationCenterDelegate
 	{
 		// @property (readonly, nonatomic, strong, class) Apptentive * _Nonnull shared;
 		[Static]
 		[Export ("shared", ArgumentSemantic.Strong)]
-		ApptentiveIOS Shared { get; }
+		Apptentive Shared { get; }
 
 		// @property (nonatomic) enum UITheme theme;
 		[Export ("theme", ArgumentSemantic.Assign)]
@@ -30,7 +30,7 @@ namespace ApptentiveKit.iOS
 
 		// -(void)registerWithKey:(NSString * _Nonnull)key signature:(NSString * _Nonnull)signature completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("registerWithConfiguration:completion:")]
-		void Register(ApptentiveIOSConfiguration configuration, [NullAllowed] Action<bool> completion);
+		void Register(ApptentiveConfiguration configuration, [NullAllowed] Action<bool> completion);
 
 		// -(void)engage:(NSString * _Nonnull)event fromViewController:(UIViewController * _Nullable)viewController;
 		[Export("engage:fromViewController:")]
@@ -184,7 +184,7 @@ namespace ApptentiveKit.iOS
 	// @interface ApptentiveConfiguration : NSObject
 	[BaseType(typeof(NSObject), Name = "_TtC13ApptentiveKit23ApptentiveConfiguration")]
 	[DisableDefaultCtor]
-	interface ApptentiveIOSConfiguration
+	interface ApptentiveConfiguration
 	{
 		// @property (readonly, copy, nonatomic) NSString * _Nonnull apptentiveKey;
 		[Export("apptentiveKey")]
