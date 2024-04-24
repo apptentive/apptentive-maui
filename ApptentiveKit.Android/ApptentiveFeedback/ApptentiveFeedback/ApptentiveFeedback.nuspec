@@ -1,0 +1,47 @@
+<package>
+  <metadata>
+    <id>ApptentiveFeedback</id>
+    <title>ApptentiveFeedback for Maui Android</title>
+    <version>6.7.0</version>
+    <authors>Apptentive</authors>
+    <owners>Apptentive</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# bindings for Apptentive SDK</description>
+    <copyright>Copyright © Apptentive</copyright>
+    <projectUrl>https://github.com/apptentive/apptentive-maui</projectUrl>
+    <license type="expression">BSD-3-Clause</license>
+    <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
+     <dependencies>
+     <group targetFramework="net8.0-android34.0">
+     <dependency id="Xamarin.AndroidX.AppCompat" version="1.6.1.7" />
+     <dependency id="GoogleGson" version="2.10.1.8" />
+     <dependency id="Xamarin.AndroidX.Legacy.Support.V4" version="1.0.0.23" />
+     <dependency id="Xamarin.Kotlin.StdLib" version="1.9.23" />
+     <dependency id="Xamarin.AndroidX.Fragment.Ktx" version="1.6.2.2" />
+     <dependency id="Xamarin.AndroidX.Lifecycle.LiveData" version="2.7.0.1" />
+     <dependency id="Xamarin.AndroidX.Lifecycle.Common" version="2.7.0.1" />
+     <dependency id="Xamarin.Google.Android.Material" version="1.10.0.3" />
+     <dependency id="Xamarin.GooglePlayServices.Base" version="118.2.0.5" />
+     <dependency id="Newtonsoft.Json" version="13.0.3" />
+     <dependency id="Xamarin.AndroidX.Fragment" version="1.6.2.2" />
+	   <dependency id="Xamarin.Google.Android.Play.Review" version="2.0.1.7" />
+	   <dependency id ="Xamarin.Google.Android.Play.Review.Ktx" version="2.0.1.7"/>
+     <dependency id="ApptentiveCore" version="6.7.0" />
+     <dependency id="ApptentiveCoreUI" version="6.7.0" />
+     <dependency id="ApptentiveInAppReview" version="6.7.0" />
+     <dependency id="ApptentiveNavigateToLink" version="6.7.0" />
+     <dependency id="ApptentiveEnjoymentDialog" version="6.7.0" />
+     <dependency id="ApptentiveSurvey" version="6.7.0" />
+     <dependency id="ApptentiveNotes" version="6.7.0" />
+     <dependency id="ApptentiveRatings" version="6.7.0" />
+     <dependency id="ApptentiveMessageCenter" version="6.7.0" />
+     </group>
+     </dependencies>
+  </metadata>
+  <files>
+    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveFeedback.dll" target="lib/net8.0-android34.0/"/>
+  </files>
+</package>
+
+
+
