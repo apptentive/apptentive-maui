@@ -2,7 +2,7 @@
   <metadata>
     <id>ApptentiveInAppReview</id>
     <title>ApptentiveInAppReview for Maui Android</title>
-    <version>6.7.0</version>
+    <version>6.7.1</version>
     <authors>Apptentive</authors>
     <owners>Apptentive</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,10 +12,14 @@
     <license type="expression">BSD-3-Clause</license>
     <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
      <dependencies>
-     <group targetFramework="net8.0-android34.0"></group>
+     <group targetFramework="net8.0-android34.0">
+      <dependency id="Xamarin.AndroidX.ConstraintLayout" version="2.1.4.10"/>
+     </group>
      </dependencies>
   </metadata>
   <files>
     <file src="../ApptentiveInAppReview/bin/Release/net8.0-android/ApptentiveInAppReview.dll" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveInAppReview/bin/Release/net8.0-android/ApptentiveInAppReview.xml" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveInAppReview/bin/Release/net8.0-android/apptentive-in-app-review-6.7.0.aar" target="lib/net8.0-android34.0/"/>
   </files>
 </package>
