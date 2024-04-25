@@ -24,41 +24,21 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review" Version="2.0.1.7" />
-	  <PackageReference Include ="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
+	  <PackageReference Include="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
+    <PackageReference Include="ApptentiveMessageCenter" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveRatings" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveNotes" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveSurvey" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveEnjoymentDialog" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveNavigateToLink" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveInAppReview" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveCoreUI" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveCore" Version="6.7.1"/>
   </ItemGroup>
 <ItemGroup>
   <AndroidLibrary Update="apptentive-feedback-6.7.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
-</ItemGroup>
-<ItemGroup>
-  <Reference Include="ApptentiveCore">
-    <HintPath>..\..\ApptentiveCore\ApptentiveCore\bin\Release\net8.0-android\ApptentiveCore.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveCoreUI">
-    <HintPath>..\..\ApptentiveCoreUI\ApptentiveCoreUI\bin\Release\net8.0-android\ApptentiveCoreUI.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveEnjoymentDialog">
-    <HintPath>..\..\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog\bin\Release\net8.0-android\ApptentiveEnjoymentDialog.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveInAppReview">
-    <HintPath>..\..\ApptentiveInAppReview\ApptentiveInAppReview\bin\Release\net8.0-android\ApptentiveInAppReview.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveMessageCenter">
-    <HintPath>..\..\ApptentiveMessageCenter\ApptentiveMessageCenter\bin\Release\net8.0-android\ApptentiveMessageCenter.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveNavigateToLink">
-    <HintPath>..\..\ApptentiveNavigateToLink\ApptentiveNavigateToLink\bin\Release\net8.0-android\ApptentiveNavigateToLink.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveNotes">
-    <HintPath>..\..\ApptentiveNotes\ApptentiveNotes\bin\Release\net8.0-android\ApptentiveNotes.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveRatings">
-    <HintPath>..\..\ApptentiveRatings\ApptentiveRatings\bin\Release\net8.0-android\ApptentiveRatings.dll</HintPath>
-  </Reference>
-  <Reference Include="ApptentiveSurvey">
-    <HintPath>..\..\ApptentiveSurvey\ApptentiveSurvey\bin\Release\net8.0-android\ApptentiveSurvey.dll</HintPath>
-  </Reference>
 </ItemGroup>
 </Project>
