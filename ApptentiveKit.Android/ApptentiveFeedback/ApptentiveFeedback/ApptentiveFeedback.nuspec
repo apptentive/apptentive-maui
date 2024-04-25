@@ -26,6 +26,15 @@
      <dependency id="Xamarin.AndroidX.Fragment" version="1.6.2.2" />
 	   <dependency id="Xamarin.Google.Android.Play.Review" version="2.0.1.7" />
 	   <dependency id ="Xamarin.Google.Android.Play.Review.Ktx" version="2.0.1.7"/>
+     <dependency id="ApptentiveCore" version="6.7.1" />
+     <dependency id="ApptentiveCoreUI" version="6.7.1" />
+     <dependency id="ApptentiveInAppReview" version="6.7.1" />
+     <dependency id="ApptentiveNavigateToLink" version="6.7.1" />
+     <dependency id="ApptentiveEnjoymentDialog" version="6.7.1" />
+     <dependency id="ApptentiveSurvey" version="6.7.1" />
+     <dependency id="ApptentiveNotes" version="6.7.1" />
+     <dependency id="ApptentiveRatings" version="6.7.1" />
+     <dependency id="ApptentiveMessageCenter" version="6.7.1" />
      </group>
      </dependencies>
   </metadata>
@@ -33,15 +42,6 @@
     <file src="../ApptentiveFeedback/bin/Release/net8.0-android/apptentive-feedback-6.7.0.aar" target="lib/net8.0-android34.0/"/>
     <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveFeedback.xml" target="lib/net8.0-android34.0/"/>
     <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveFeedback.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveCore.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveCoreUI.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveEnjoymentDialog.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveInAppReview.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveMessageCenter.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveNavigateToLink.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveNotes.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveRatings.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveSurvey.dll" target="lib/net8.0-android34.0/"/>
   </files>
 </package>
 
