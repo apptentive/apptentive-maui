@@ -17,8 +17,8 @@
     <group targetFramework="net8.0-android34.0">
     <dependency id="ApptentiveFeedback" version="6.7.1"/>
     </group>
-    <dependency id="Apptentive.iOS" version="6.7.2"/>
     <group targetFramework="net8.0-ios17.2">
+    <dependency id="Apptentive.iOS" version="6.7.2"/>
     </group>
     </dependencies>
   </metadata>
