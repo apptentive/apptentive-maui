@@ -32,7 +32,12 @@
     <NativeReference Include="Externals\ApptentiveKit.xcframework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
-      <ForceLoad>True</ForceLoad>
     </NativeReference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
+    <None Include="ApptentiveKit.iOS.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
