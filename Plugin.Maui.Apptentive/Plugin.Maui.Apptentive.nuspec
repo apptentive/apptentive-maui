@@ -17,15 +17,13 @@
     <group targetFramework="net8.0-android34.0">
     <dependency id="ApptentiveFeedback" version="6.7.0"/>
     </group>
-    <group targetFramework="net8.0-ios17.0">
     <dependency id="Apptentive.iOS" version="6.7.1"/>
+    <group targetFramework="net8.0-ios17.2">
     </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="bin/Release/net8.0-ios/Plugin.Maui.Apptentive.dll" target="lib/net8.0-ios17.0/"/>
-    <file src="bin/Release/net8.0-ios/ApptentiveKit.iOS.resources/**" target="content/Apptentive.iOS.resources" />
- 
+    <file src="bin/Release/net8.0-ios/Plugin.Maui.Apptentive.dll" target="lib/net8.0-ios17.2/"/>
     <file src="bin/Release/net8.0-android/Plugin.Maui.Apptentive.dll" target="lib/net8.0-android34.0/"/>
     <file src="..\icon.png" target="images\" />
   </files>

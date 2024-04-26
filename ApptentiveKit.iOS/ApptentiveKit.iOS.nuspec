@@ -13,12 +13,13 @@
     <license type="expression">BSD-3-Clause</license>
     <icon>images\icon.png</icon>
     <dependencies>
-    <group targetFramework="net8.0-ios17.0"></group>
+      <group targetFramework="net8.0-ios17.2"></group>
     </dependencies>
   </metadata>
   <files>
-    <file src="bin/Release/net8.0-ios/ApptentiveKit.iOS.dll" target="lib/net8.0-ios17.0/"/>
+    <file src="bin/Release/net8.0-ios/ApptentiveKit.iOS.dll" target="lib/net8.0-ios17.2/"/>
     <file src="bin/Release/net8.0-ios/ApptentiveKit.iOS.resources/**" target="content/Apptentive.iOS.resources" />
     <file src="..\icon.png" target="images\" />
+    <file src="ApptentiveKit.iOS.targets" target="build/Apptentive.iOS.targets" />
   </files>
 </package>
