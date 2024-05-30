@@ -1,0 +1,25 @@
+<package>
+  <metadata>
+    <id>ApptentiveCoreUI</id>
+    <title>ApptentiveCoreUI for Maui Android</title>
+    <version>6.7.1</version>
+    <authors>Apptentive</authors>
+    <owners>Apptentive</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# bindings for Apptentive SDK</description>
+    <copyright>Copyright © Apptentive</copyright>
+    <projectUrl>https://github.com/apptentive/apptentive-maui</projectUrl>
+    <license type="expression">BSD-3-Clause</license>
+    <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
+     <dependencies>
+     <group targetFramework="net8.0-android34.0">
+          <dependency id="Xamarin.AndroidX.AppCompat" version="1.6.1.7"/>
+     </group>
+     </dependencies>
+  </metadata>
+  <files>
+    <file src="../ApptentiveCoreUI/bin/Release/net8.0-android/ApptentiveCoreUI.dll" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveCoreUI/bin/Release/net8.0-android/ApptentiveCoreUI.xml" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveCoreUI/bin/Release/net8.0-android/apptentive-core-ui-6.7.0.aar" target="lib/net8.0-android34.0/"/>
+  </files>
+</package>

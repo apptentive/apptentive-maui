@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Apptentive.iOS</id>
+    <version>6.7.2</version>
+    <title>ApptentiveKit iOS wrapper for Maui plugin</title>
+    <authors>Apptentive</authors>
+    <owners>Apptentive</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# bindings for Apptentive SDK</description>
+    <copyright>Copyright © Apptentive</copyright>
+    <projectUrl>https://github.com/apptentive/apptentive-maui</projectUrl>
+    <license type="expression">BSD-3-Clause</license>
+    <icon>images\icon.png</icon>
+    <dependencies>
+      <group targetFramework="net8.0-ios17.2"></group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/net8.0-ios/ApptentiveKit.iOS.dll" target="lib/net8.0-ios17.2/"/>
+    <file src="bin/Release/net8.0-ios/ApptentiveKit.iOS.resources/**" target="content/Apptentive.iOS.resources" />
+    <file src="..\icon.png" target="images\" />
+    <file src="ApptentiveKit.iOS.targets" target="build/Apptentive.iOS.targets" />
+  </files>
+</package>
