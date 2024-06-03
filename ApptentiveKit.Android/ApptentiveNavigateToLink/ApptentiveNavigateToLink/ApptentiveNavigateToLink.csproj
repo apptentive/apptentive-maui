@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-  <AndroidLibrary Update="apptentive-navigate-to-link-6.7.0.aar">
+  <AndroidLibrary Update="apptentive-navigate-to-link-6.8.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
