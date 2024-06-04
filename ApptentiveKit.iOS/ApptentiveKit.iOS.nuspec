@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Apptentive.iOS</id>
-    <version>6.7.2</version>
+    <version>6.8.0</version>
     <title>ApptentiveKit iOS wrapper for Maui plugin</title>
     <authors>Apptentive</authors>
     <owners>Apptentive</owners>
