@@ -8,7 +8,7 @@
 		<OutputType>Library</OutputType>
 
 		<Authors>Alchemer Digital Team</Authors>
-	    <Version>6.7.2</Version>
+	    <Version>6.8.0</Version>
 		<Copyright>Copyright © 2024 Alchemer LLC and contributors</Copyright>
 		<IsPackable>True</IsPackable>
 		<RepositoryUrl>https://github.com/apptentive/apptentive-maui</RepositoryUrl>
@@ -45,13 +45,13 @@
 	</ItemGroup>
 
   	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' ">
-	    <PackageReference Include="Apptentive.iOS" Version="6.7.2" />
+	    <PackageReference Include="Apptentive.iOS" Version="6.8.1" />
 		<!-- For development:
 		<ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" /> -->
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-	 <PackageReference Include="ApptentiveFeedback" Version="6.7.1" />
+	 <PackageReference Include="ApptentiveFeedback" Version="6.8.0" />
 		<!-- For development:
 		<ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" />
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCoreUI\ApptentiveCoreUI\ApptentiveCoreUI.csproj" />

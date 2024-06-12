@@ -4,7 +4,7 @@
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-     <Version>6.7.1</Version>
+     <Version>6.8.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Additions\" />
@@ -26,18 +26,18 @@
     <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review" Version="2.0.1.7" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
-    <PackageReference Include="ApptentiveMessageCenter" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveRatings" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveNotes" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveSurvey" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveEnjoymentDialog" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveNavigateToLink" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveInAppReview" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveCoreUI" Version="6.7.1"/>
-    <PackageReference Include="ApptentiveCore" Version="6.7.1"/>
+    <PackageReference Include="ApptentiveMessageCenter" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveRatings" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveNotes" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveSurvey" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveEnjoymentDialog" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveNavigateToLink" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveInAppReview" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveCoreUI" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveCore" Version="6.8.0"/>
   </ItemGroup>
 <ItemGroup>
-  <AndroidLibrary Update="apptentive-feedback-6.7.0.aar">
+  <AndroidLibrary Update="apptentive-feedback-6.8.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
