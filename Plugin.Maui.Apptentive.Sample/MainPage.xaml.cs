@@ -1,5 +1,5 @@
 ﻿using System.Security.Principal;
-using ApptentiveAlias = Plugin.Maui.Apptentive;
+using ApptentiveSDK = Plugin.Maui.Apptentive;
 
 
 namespace Plugin.Maui.Apptentive.Sample;
@@ -18,22 +18,22 @@ public partial class MainPage : ContentPage
 		Console.Write("Clicked engage button with");
 		Console.WriteLine(EngageEntry.Text);
 
-		ApptentiveAlias.Apptentive.Default.Engage(EngageEntry.Text);
+		ApptentiveSDK.Apptentive.Default.Engage(EngageEntry.Text);
     }
 
 	private void OnMessageCenterClicked(object sender, EventArgs e)
 	{
-		ApptentiveAlias.Apptentive.Default.PresentMessageCenter();
+		ApptentiveSDK.Apptentive.Default.PresentMessageCenter();
 	}
 
 	private void OnPersonNameSetClicked(object sender, EventArgs e)
 	{
-		ApptentiveAlias.Apptentive.Default.SetPersonName(PersonName.Text);
+		ApptentiveSDK.Apptentive.Default.SetPersonName(PersonName.Text);
 	}
 
 	private void OnPersonEmailAddressSetClicked(object sender, EventArgs e)
 	{
-		ApptentiveAlias.Apptentive.Default.setPersonEmailAddress(PersonEmailAddress.Text);
+		ApptentiveSDK.Apptentive.Default.setPersonEmailAddress(PersonEmailAddress.Text);
 	}
 
 	private void OnPersonCustomStringAddClicked(object sender, EventArgs e) 
@@ -42,7 +42,7 @@ public partial class MainPage : ContentPage
 		var value = PersonCustomStringValue.Text;
 
 		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
-			ApptentiveAlias.Apptentive.Default.addCustomPersonData(key, value);
+			ApptentiveSDK.Apptentive.Default.addCustomPersonData(key, value);
 			return;
 		}
 
@@ -58,7 +58,7 @@ public partial class MainPage : ContentPage
 			try {
 				var numericValue = Double.Parse(value);
 
-				ApptentiveAlias.Apptentive.Default.addCustomPersonData(key, numericValue);
+				ApptentiveSDK.Apptentive.Default.addCustomPersonData(key, numericValue);
 				return;
 			}
 			catch (Exception exc)
@@ -76,7 +76,7 @@ public partial class MainPage : ContentPage
 		var value = PersonCustomBoolValue.IsToggled;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveAlias.Apptentive.Default.addCustomPersonData(key, value);
+			ApptentiveSDK.Apptentive.Default.addCustomPersonData(key, value);
 			return;
 		}
 		
@@ -88,7 +88,7 @@ public partial class MainPage : ContentPage
 		var key = PersonCustomDataRemoveKey.Text;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveAlias.Apptentive.Default.removeCustomPersonData(key);
+			ApptentiveSDK.Apptentive.Default.removeCustomPersonData(key);
 			return;
 		}
 
@@ -101,7 +101,7 @@ public partial class MainPage : ContentPage
 		var value = DeviceCustomStringValue.Text;
 
 		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
-			ApptentiveAlias.Apptentive.Default.addCustomDeviceData(key, value);
+			ApptentiveSDK.Apptentive.Default.addCustomDeviceData(key, value);
 			return;
 		}
 
@@ -118,7 +118,7 @@ public partial class MainPage : ContentPage
 			try {
 				var numericValue = Double.Parse(value);
 
-				ApptentiveAlias.Apptentive.Default.addCustomDeviceData(key, numericValue);
+				ApptentiveSDK.Apptentive.Default.addCustomDeviceData(key, numericValue);
 				return;
 			}
 			catch (Exception exc)
@@ -136,7 +136,7 @@ public partial class MainPage : ContentPage
 		var value = DeviceCustomBoolValue.IsToggled;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveAlias.Apptentive.Default.addCustomDeviceData(key, value);
+			ApptentiveSDK.Apptentive.Default.addCustomDeviceData(key, value);
 			return;
 		}
 		
@@ -148,7 +148,7 @@ public partial class MainPage : ContentPage
 		var key = DeviceCustomDataRemoveKey.Text;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveAlias.Apptentive.Default.removeCustomDeviceData(key);
+			ApptentiveSDK.Apptentive.Default.removeCustomDeviceData(key);
 			return;
 		}
 
@@ -166,7 +166,7 @@ public partial class MainPage : ContentPage
 		};
 
 		if (!String.IsNullOrEmpty(token)) {
-			ApptentiveAlias.Apptentive.Default.LogIn(token, completionHandler);
+			ApptentiveSDK.Apptentive.Default.LogIn(token, completionHandler);
 			return;
 		}
 
@@ -175,6 +175,6 @@ public partial class MainPage : ContentPage
 
 	private void OnLogoutClicked(object sender, EventArgs e)
 	{
-		ApptentiveAlias.Apptentive.Default.LogOut();
+		ApptentiveSDK.Apptentive.Default.LogOut();
 	}
 }
