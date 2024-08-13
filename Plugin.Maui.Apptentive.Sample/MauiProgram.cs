@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using ApptentiveAlias = Plugin.Maui.Apptentive;
+using ApptentiveSDK = Plugin.Maui.Apptentive;
 
 namespace Plugin.Maui.Apptentive.Sample;
 
@@ -22,7 +22,7 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<IApptentive>(ApptentiveAlias.Apptentive.Default);
+		builder.Services.AddSingleton<IApptentive>(ApptentiveSDK.Apptentive.Default);
 
 		Action<bool> completionHandler = (success) => {
 			Console.Write("Registration ");
@@ -42,12 +42,12 @@ public static class MauiProgram
 #endif
 
 #if __IOS__
-		ApptentiveAlias.Apptentive.Default.Register(configuration, completionHandler);
+		ApptentiveSDK.Apptentive.Default.Register(configuration, completionHandler);
 #elif __ANDROID__
-		ApptentiveAlias.Apptentive.Default.Register(configuration, completionHandler, MainApplication.Current);
+		ApptentiveSDK.Apptentive.Default.Register(configuration, completionHandler, MainApplication.Current);
 #endif
 
-		ApptentiveAlias.Apptentive.Default.EventEngaged += OnEventEngaged;
+		ApptentiveSDK.Apptentive.Default.EventEngaged += OnEventEngaged;
 
 		return builder.Build();
 	}
