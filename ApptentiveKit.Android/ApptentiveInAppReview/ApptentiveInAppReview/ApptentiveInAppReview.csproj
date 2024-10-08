@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
  <ItemGroup>
-  <AndroidLibrary Update="apptentive-in-app-review-6.8.0.aar">
+  <AndroidLibrary Update="apptentive-in-app-review-6.9.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
