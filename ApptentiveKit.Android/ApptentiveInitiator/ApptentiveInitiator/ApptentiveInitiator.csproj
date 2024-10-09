@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+  <AndroidLibrary Update="apptentive-initiator-6.9.0.aar">
+    <Bind>true</Bind>
+    <Pack>true</Pack>
+  </AndroidLibrary>
+</ItemGroup>
+</Project>
