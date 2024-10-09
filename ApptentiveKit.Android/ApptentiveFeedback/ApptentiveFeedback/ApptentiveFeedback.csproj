@@ -26,7 +26,7 @@
     <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review" Version="2.0.1.7" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
-    <!-- <PackageReference Include="ApptentiveMessageCenter" Version="6.8.0"/>
+    <PackageReference Include="ApptentiveMessageCenter" Version="6.8.0"/>
     <PackageReference Include="ApptentiveRatings" Version="6.8.0"/>
     <PackageReference Include="ApptentiveNotes" Version="6.8.0"/>
     <PackageReference Include="ApptentiveSurvey" Version="6.8.0"/>
@@ -34,7 +34,8 @@
     <PackageReference Include="ApptentiveNavigateToLink" Version="6.8.0"/>
     <PackageReference Include="ApptentiveInAppReview" Version="6.8.0"/>
     <PackageReference Include="ApptentiveCoreUI" Version="6.8.0"/>
-    <PackageReference Include="ApptentiveCore" Version="6.8.0"/> -->
+    <PackageReference Include="ApptentiveCore" Version="6.8.0"/>
+    <!-- TODO: update the version to 6.9.0 and add the initiator packages as -->
   </ItemGroup>
 <ItemGroup>
   <AndroidLibrary Update="apptentive-feedback-6.9.0.aar">
