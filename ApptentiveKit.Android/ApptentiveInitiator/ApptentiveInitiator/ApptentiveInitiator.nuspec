@@ -1,7 +1,7 @@
 <package>
   <metadata>
-    <id>ApptentiveNotes</id>
-    <title>ApptentiveNotes for Maui Android</title>
+    <id>ApptentiveInitiator</id>
+    <title>ApptentiveInitiator for Maui Android</title>
     <version>6.9.0</version>
     <authors>Apptentive</authors>
     <owners>Apptentive</owners>
@@ -12,14 +12,12 @@
     <license type="expression">BSD-3-Clause</license>
     <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
      <dependencies>
-     <group targetFramework="net8.0-android34.0">
-      <dependency id="Xamarin.AndroidX.ConstraintLayout" version="2.1.4.10"/>
-     </group>
+     <group targetFramework="net8.0-android34.0"></group>
      </dependencies>
   </metadata>
   <files>
-    <file src="../ApptentiveNotes/bin/Release/net8.0-android/ApptentiveNotes.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveNotes/bin/Release/net8.0-android/ApptentiveNotes.xml" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveNotes/bin/Release/net8.0-android/apptentive-notes-6.9.0.aar" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveInitiator/bin/Release/net8.0-android/ApptentiveInitiator.dll" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveInitiator/bin/Release/net8.0-android/ApptentiveInitiator.xml" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveInitiator/bin/Release/net8.0-android/apptentive-initiator-6.9.0.aar" target="lib/net8.0-android34.0/"/>
   </files>
 </package>
