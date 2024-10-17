@@ -2,7 +2,7 @@
   <metadata>
     <id>ApptentiveMessageCenter</id>
     <title>ApptentiveMessageCenter for Maui Android</title>
-    <version>6.8.0</version>
+    <version>6.9.0</version>
     <authors>Apptentive</authors>
     <owners>Apptentive</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,6 +20,6 @@
   <files>
     <file src="../ApptentiveMessageCenter/bin/Release/net8.0-android/ApptentiveMessageCenter.dll" target="lib/net8.0-android34.0/"/>
     <file src="../ApptentiveMessageCenter/bin/Release/net8.0-android/ApptentiveMessageCenter.xml" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveMessageCenter/bin/Release/net8.0-android/apptentive-message-center-6.8.0.aar" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveMessageCenter/bin/Release/net8.0-android/apptentive-message-center-6.9.0.aar" target="lib/net8.0-android34.0/"/>
   </files>
 </package>

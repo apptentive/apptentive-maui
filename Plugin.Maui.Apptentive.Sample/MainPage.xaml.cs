@@ -1,6 +1,4 @@
 ﻿using System.Security.Principal;
-using ApptentiveSDK = Plugin.Maui.Apptentive;
-
 
 namespace Plugin.Maui.Apptentive.Sample;
 
@@ -18,22 +16,22 @@ public partial class MainPage : ContentPage
 		Console.Write("Clicked engage button with");
 		Console.WriteLine(EngageEntry.Text);
 
-		ApptentiveSDK.Apptentive.Default.Engage(EngageEntry.Text);
+		Plugin.Maui.Apptentive.Apptentive.Default.Engage(EngageEntry.Text);
     }
 
 	private void OnMessageCenterClicked(object sender, EventArgs e)
 	{
-		ApptentiveSDK.Apptentive.Default.PresentMessageCenter();
+		Plugin.Maui.Apptentive.Apptentive.Default.PresentMessageCenter();
 	}
 
 	private void OnPersonNameSetClicked(object sender, EventArgs e)
 	{
-		ApptentiveSDK.Apptentive.Default.SetPersonName(PersonName.Text);
+		Plugin.Maui.Apptentive.Apptentive.Default.SetPersonName(PersonName.Text);
 	}
 
 	private void OnPersonEmailAddressSetClicked(object sender, EventArgs e)
 	{
-		ApptentiveSDK.Apptentive.Default.setPersonEmailAddress(PersonEmailAddress.Text);
+		Plugin.Maui.Apptentive.Apptentive.Default.setPersonEmailAddress(PersonEmailAddress.Text);
 	}
 
 	private void OnPersonCustomStringAddClicked(object sender, EventArgs e) 
@@ -42,7 +40,7 @@ public partial class MainPage : ContentPage
 		var value = PersonCustomStringValue.Text;
 
 		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
-			ApptentiveSDK.Apptentive.Default.addCustomPersonData(key, value);
+			Plugin.Maui.Apptentive.Apptentive.Default.addCustomPersonData(key, value);
 			return;
 		}
 
@@ -58,7 +56,7 @@ public partial class MainPage : ContentPage
 			try {
 				var numericValue = Double.Parse(value);
 
-				ApptentiveSDK.Apptentive.Default.addCustomPersonData(key, numericValue);
+				Plugin.Maui.Apptentive.Apptentive.Default.addCustomPersonData(key, numericValue);
 				return;
 			}
 			catch (Exception exc)
@@ -76,7 +74,7 @@ public partial class MainPage : ContentPage
 		var value = PersonCustomBoolValue.IsToggled;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveSDK.Apptentive.Default.addCustomPersonData(key, value);
+			Plugin.Maui.Apptentive.Apptentive.Default.addCustomPersonData(key, value);
 			return;
 		}
 		
@@ -88,7 +86,7 @@ public partial class MainPage : ContentPage
 		var key = PersonCustomDataRemoveKey.Text;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveSDK.Apptentive.Default.removeCustomPersonData(key);
+			Plugin.Maui.Apptentive.Apptentive.Default.removeCustomPersonData(key);
 			return;
 		}
 
@@ -101,7 +99,7 @@ public partial class MainPage : ContentPage
 		var value = DeviceCustomStringValue.Text;
 
 		if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value)) {
-			ApptentiveSDK.Apptentive.Default.addCustomDeviceData(key, value);
+			Plugin.Maui.Apptentive.Apptentive.Default.addCustomDeviceData(key, value);
 			return;
 		}
 
@@ -118,7 +116,7 @@ public partial class MainPage : ContentPage
 			try {
 				var numericValue = Double.Parse(value);
 
-				ApptentiveSDK.Apptentive.Default.addCustomDeviceData(key, numericValue);
+				Plugin.Maui.Apptentive.Apptentive.Default.addCustomDeviceData(key, numericValue);
 				return;
 			}
 			catch (Exception exc)
@@ -136,7 +134,7 @@ public partial class MainPage : ContentPage
 		var value = DeviceCustomBoolValue.IsToggled;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveSDK.Apptentive.Default.addCustomDeviceData(key, value);
+			Plugin.Maui.Apptentive.Apptentive.Default.addCustomDeviceData(key, value);
 			return;
 		}
 		
@@ -148,7 +146,7 @@ public partial class MainPage : ContentPage
 		var key = DeviceCustomDataRemoveKey.Text;
 
 		if (!String.IsNullOrEmpty(key)) {
-			ApptentiveSDK.Apptentive.Default.removeCustomDeviceData(key);
+			Plugin.Maui.Apptentive.Apptentive.Default.removeCustomDeviceData(key);
 			return;
 		}
 
@@ -166,7 +164,7 @@ public partial class MainPage : ContentPage
 		};
 
 		if (!String.IsNullOrEmpty(token)) {
-			ApptentiveSDK.Apptentive.Default.LogIn(token, completionHandler);
+			Plugin.Maui.Apptentive.Apptentive.Default.LogIn(token, completionHandler);
 			return;
 		}
 
@@ -175,6 +173,6 @@ public partial class MainPage : ContentPage
 
 	private void OnLogoutClicked(object sender, EventArgs e)
 	{
-		ApptentiveSDK.Apptentive.Default.LogOut();
+		Plugin.Maui.Apptentive.Apptentive.Default.LogOut();
 	}
 }
