@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.ComponentModel;
+using Microsoft.Extensions.Logging;
+using Plugin.Maui.Apptentive;
+using Microsoft.Extensions.Configuration;
 
 namespace Plugin.Maui.Apptentive.Sample;
 
