@@ -13,7 +13,7 @@
     <license type="expression">BSD-3-Clause</license>
     <icon>images\icon.png</icon>
     <dependencies>
-      <group targetFramework="net10.0-ios17.2"></group>
+      <group targetFramework="net10.0-ios26.0"></group>
     </dependencies>
   </metadata>
   <files>
