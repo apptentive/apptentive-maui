@@ -216,8 +216,8 @@ namespace ApptentiveKit.iOS
 		string DistributionVersion { get; set; }
 
 		// @property (copy, nonatomic) NSString * _Nullable baseURL;
-		[NullAllowed, Export("baseURL")]
-		string? OverrideBaseURL { get; set; }
+		[NullAllowed, Export("overrideBaseURL")]
+		NSUrl? OverrideBaseUrl { get; set; }
 
 		// @property (copy, nonatomic) NSString * _Nullable region;
 		[NullAllowed, Export("region")]
