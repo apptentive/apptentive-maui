@@ -12,7 +12,7 @@
     <license type="expression">BSD-3-Clause</license>
     <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
      <dependencies>
-     <group targetFramework="net10.0-android34.0">
+     <group targetFramework="net10.0-android35.0">
      <dependency id="Xamarin.AndroidX.AppCompat" version="1.7.1.1" />
      <dependency id="GoogleGson" version="2.13.1.1" />
      <dependency id="Xamarin.AndroidX.Legacy.Support.V4" version="1.0.0.23" />
@@ -40,9 +40,9 @@
      </dependencies>
   </metadata>
   <files>
-    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/apptentive-feedback-7.0.0.aar" target="lib/net10.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/ApptentiveFeedback.xml" target="lib/net10.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/ApptentiveFeedback.dll" target="lib/net10.0-android34.0/"/>
+    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/apptentive-feedback-7.0.0.aar" target="lib/net10.0-android35.0/"/>
+    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/ApptentiveFeedback.xml" target="lib/net10.0-android35.0/"/>
+    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/ApptentiveFeedback.dll" target="lib/net10.0-android35.0/"/>
   </files>
 </package>
 
