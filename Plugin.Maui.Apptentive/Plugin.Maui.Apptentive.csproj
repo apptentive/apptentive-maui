@@ -8,8 +8,8 @@
 		<OutputType>Library</OutputType>
 
 		<Authors>Alchemer Digital Team</Authors>
-	    <Version>6.9.0</Version>
-		<Copyright>Copyright © 2024 Alchemer LLC and contributors</Copyright>
+	    <Version>7.0.0</Version>
+		<Copyright>Copyright © 2026 Alchemer LLC and contributors</Copyright>
 		<IsPackable>True</IsPackable>
 		<RepositoryUrl>https://github.com/apptentive/apptentive-maui</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
@@ -45,7 +45,7 @@
 	</ItemGroup>
 
   	<ItemGroup Condition=" '$(TargetFramework)' == 'net10.0-ios' ">
-	    <PackageReference Include="Apptentive.iOS" Version="6.9.0" />
+	    <PackageReference Include="Apptentive.iOS" Version="7.0.0" />
 		<!-- For development:
 		<ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" /> -->
 	</ItemGroup>
