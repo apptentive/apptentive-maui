@@ -32,11 +32,22 @@ public static class MauiProgram
 			Console.WriteLine("succeed.");
 		};
 
+		var assembly = typeof(MauiProgram).Assembly;
+		using var stream = assembly.GetManifestResourceStream("Plugin.Maui.Apptentive.Sample.appsettings.Secret.json");
+
+		var config = new ConfigurationBuilder()
+    		.AddJsonStream(stream!)
+    		.Build();
+
 #if __IOS__
-		var configuration = new Configuration("Your Apptentive iOS App Key", "Your Apptentive iOS App Signature");
+    	var configuration = new Configuration(config["Apptentive:iOSKey"]!, config["Apptentive:iOSSignature"]!);
 #elif __ANDROID__
-		var configuration = new Configuration("Your Apptentive Android App Key", "Your Apptentive Android App Signature");
+    	var configuration = new Configuration(config["Apptentive:AndroidKey"]!, config["Apptentive:AndroidSignature"]!);
 #endif
+
+		// configuration.Region = "eu";
+		//configuration.OverrideBaseURL = "https://IOS-CENTURIO-IOS-3d5c3233ed22.api.use1.digital.stage0.alc-eng.com/";
+		//configuration.OverrideBaseURL = "https://api.apptentive.com/";
 
 #if DEBUG
 		configuration.LogLevel = ApptentiveLogLevel.Verbose;
@@ -44,7 +55,12 @@ public static class MauiProgram
 #endif
 
 #if __IOS__
+<<<<<<< HEAD
 		Plugin.Maui.Apptentive.Apptentive.Default.Register(configuration, completionHandler);
+=======
+		Apptentive.Default.Register(configuration, completionHandler);
+        // ApptentiveKit.iOS.Apptentive.FontName = "AmericanTypewriter";
+>>>>>>> bdafdb6 (Move credentials to separate file)
 #elif __ANDROID__
 		Plugin.Maui.Apptentive.Apptentive.Default.Register(configuration, completionHandler, MainApplication.Current);
 #endif
