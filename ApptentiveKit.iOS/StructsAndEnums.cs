@@ -5,6 +5,8 @@ namespace ApptentiveKit.iOS
 	[Native]
 	public enum UITheme : long
 	{
+		CustomerBasedOnApptentive = 3,
+		CustomerOnly = 2,
 		Apptentive = 1,
 		None = 0
 	}

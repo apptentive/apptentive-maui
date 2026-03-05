@@ -24,6 +24,11 @@ namespace ApptentiveKit.iOS
 		[Export ("shared", ArgumentSemantic.Strong)]
 		Apptentive Shared { get; }
 
+		// @property (nonatomic, class) NSString * _Nullable fontName;
+		[Static]
+		[NullAllowed, Export ("fontName")]
+		string FontName { get; set; }
+
 		// @property (nonatomic) enum UITheme theme;
 		[Export ("theme", ArgumentSemantic.Assign)]
 		UITheme Theme { get; set; }
@@ -209,6 +214,14 @@ namespace ApptentiveKit.iOS
 		// @property (copy, nonatomic) SWIFT_DEPRECATED_MSG("This property may take effect after the initial app information has been sent to the API.") NSString * distributionVersion __attribute__((deprecated("This property may take effect after the initial app information has been sent to the API.")));
 		[Export("distributionVersion")]
 		string DistributionVersion { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable baseURL;
+		[NullAllowed, Export("baseURL")]
+		string? OverrideBaseURL { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable region;
+		[NullAllowed, Export("region")]
+		string? Region { get; set; }
 
 		// -(instancetype _Nullable)initWithApptentiveKey:(NSString * _Nonnull)apptentiveKey apptentiveSignature:(NSString * _Nonnull)apptentiveSignature;
 		[Export("initWithApptentiveKey:apptentiveSignature:")]
