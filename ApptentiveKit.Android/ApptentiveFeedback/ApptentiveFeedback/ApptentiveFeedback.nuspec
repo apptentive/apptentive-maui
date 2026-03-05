@@ -12,18 +12,18 @@
     <license type="expression">BSD-3-Clause</license>
     <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
      <dependencies>
-     <group targetFramework="net8.0-android34.0">
-     <dependency id="Xamarin.AndroidX.AppCompat" version="1.6.1.7" />
-     <dependency id="GoogleGson" version="2.10.1.8" />
+     <group targetFramework="net10.0-android34.0">
+     <dependency id="Xamarin.AndroidX.AppCompat" version="1.7.1.1" />
+     <dependency id="GoogleGson" version="2.13.1.1" />
      <dependency id="Xamarin.AndroidX.Legacy.Support.V4" version="1.0.0.23" />
      <dependency id="Xamarin.Kotlin.StdLib" version="1.9.23" />
-     <dependency id="Xamarin.AndroidX.Fragment.Ktx" version="1.6.2.2" />
-     <dependency id="Xamarin.AndroidX.Lifecycle.LiveData" version="2.7.0.1" />
-     <dependency id="Xamarin.AndroidX.Lifecycle.Common" version="2.7.0.1" />
-     <dependency id="Xamarin.Google.Android.Material" version="1.10.0.3" />
+     <dependency id="Xamarin.AndroidX.Fragment.Ktx" version="1.8.8.1" />
+     <dependency id="Xamarin.AndroidX.Lifecycle.LiveData" version="2.9.2.1" />
+     <dependency id="Xamarin.AndroidX.Lifecycle.Common" version="2.9.2.1" />
+     <dependency id="Xamarin.Google.Android.Material" version="1.12.0.5" />
      <dependency id="Xamarin.GooglePlayServices.Base" version="118.2.0.5" />
      <dependency id="Newtonsoft.Json" version="13.0.3" />
-     <dependency id="Xamarin.AndroidX.Fragment" version="1.6.2.2" />
+     <dependency id="Xamarin.AndroidX.Fragment" version="1.8.8.1" />
 	   <dependency id="Xamarin.Google.Android.Play.Review" version="2.0.1.7" />
 	   <dependency id ="Xamarin.Google.Android.Play.Review.Ktx" version="2.0.1.7"/>
      <dependency id="ApptentiveCore" version="6.9.0" />
@@ -40,9 +40,9 @@
      </dependencies>
   </metadata>
   <files>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/apptentive-feedback-6.9.0.aar" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveFeedback.xml" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveFeedback/bin/Release/net8.0-android/ApptentiveFeedback.dll" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/apptentive-feedback-6.9.0.aar" target="lib/net10.0-android34.0/"/>
+    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/ApptentiveFeedback.xml" target="lib/net10.0-android34.0/"/>
+    <file src="../ApptentiveFeedback/bin/Release/net10.0-android/ApptentiveFeedback.dll" target="lib/net10.0-android34.0/"/>
   </files>
 </package>
 
