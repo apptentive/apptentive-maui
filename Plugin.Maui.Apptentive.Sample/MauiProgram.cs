@@ -41,9 +41,9 @@ public static class MauiProgram
     		.Build();
 
 #if __IOS__
-    	var configuration = new Configuration(secrets["Apptentive:iOSKey"]!, secrets["Apptentive:iOSSignature"]!);
+		var configuration = new Configuration(secrets["Apptentive:iOSKey"]!, secrets["Apptentive:iOSSignature"]!);
 #elif __ANDROID__
-    	var configuration = new Configuration(secrets["Apptentive:AndroidKey"]!, secrets["Apptentive:AndroidSignature"]!);
+		var configuration = new Configuration(secrets["Apptentive:AndroidKey"]!, secrets["Apptentive:AndroidSignature"]!);
 #endif
 
 		// Uncomment to set region and/or testing API base URL for lower environments.
@@ -56,14 +56,10 @@ public static class MauiProgram
 #endif
 
 #if __IOS__
-<<<<<<< HEAD
 		Plugin.Maui.Apptentive.Apptentive.Default.Register(configuration, completionHandler);
-=======
-		Apptentive.Default.Register(configuration, completionHandler);
 		
 		// Uncomment to set font name for iOS interactions.
-        // ApptentiveKit.iOS.Apptentive.FontName = "AmericanTypewriter";
->>>>>>> bdafdb6 (Move credentials to separate file)
+		// ApptentiveKit.iOS.Apptentive.FontName = "AmericanTypewriter";
 #elif __ANDROID__
 		Plugin.Maui.Apptentive.Apptentive.Default.Register(configuration, completionHandler, MainApplication.Current);
 #endif
