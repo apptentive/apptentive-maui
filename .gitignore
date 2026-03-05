@@ -406,3 +406,6 @@ ASALocalRun/
 
 # Meteor
 .meteor
+
+# Credentials File
+**/appsettings.Secret.json
