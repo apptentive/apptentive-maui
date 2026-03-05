@@ -45,15 +45,19 @@
 	</ItemGroup>
 
   	<ItemGroup Condition=" '$(TargetFramework)' == 'net10.0-ios' ">
-	    <PackageReference Include="Apptentive.iOS" Version="7.0.0" />
-		<!-- For development:
-		<ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" /> -->
+	    <!-- <PackageReference Include="Apptentive.iOS" Version="7.0.0" /> -->
+		<ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
 	 <PackageReference Include="ApptentiveFeedback" Version="6.9.0" />
+<<<<<<< HEAD
 		<!-- For development: -->
 		<!-- <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" />
+=======
+		<!-- For development:
+		<ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" />
+>>>>>>> 5e349d1 (Update to get it building without warnings for iOS)
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCoreUI\ApptentiveCoreUI\ApptentiveCoreUI.csproj" />
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog.csproj" />
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveInAppReview\ApptentiveInAppReview\ApptentiveInAppReview.csproj" />
