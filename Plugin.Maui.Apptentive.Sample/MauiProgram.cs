@@ -32,22 +32,23 @@ public static class MauiProgram
 			Console.WriteLine("succeed.");
 		};
 
+		// Get Alchemer credentials from secrets settings file
+		// (Copy/rename the template file and add your credentials to the copy)
 		var assembly = typeof(MauiProgram).Assembly;
 		using var stream = assembly.GetManifestResourceStream("Plugin.Maui.Apptentive.Sample.appsettings.Secret.json");
-
-		var config = new ConfigurationBuilder()
+		var secrets = new ConfigurationBuilder()
     		.AddJsonStream(stream!)
     		.Build();
 
 #if __IOS__
-    	var configuration = new Configuration(config["Apptentive:iOSKey"]!, config["Apptentive:iOSSignature"]!);
+    	var configuration = new Configuration(secrets["Apptentive:iOSKey"]!, secrets["Apptentive:iOSSignature"]!);
 #elif __ANDROID__
-    	var configuration = new Configuration(config["Apptentive:AndroidKey"]!, config["Apptentive:AndroidSignature"]!);
+    	var configuration = new Configuration(secrets["Apptentive:AndroidKey"]!, secrets["Apptentive:AndroidSignature"]!);
 #endif
 
+		// Uncomment to set region and/or testing API base URL for lower environments.
 		// configuration.Region = "eu";
-		//configuration.OverrideBaseURL = "https://IOS-CENTURIO-IOS-3d5c3233ed22.api.use1.digital.stage0.alc-eng.com/";
-		//configuration.OverrideBaseURL = "https://api.apptentive.com/";
+		// configuration.OverrideBaseUrl = "https://api.apptentive.com/";
 
 #if DEBUG
 		configuration.LogLevel = ApptentiveLogLevel.Verbose;
@@ -59,6 +60,8 @@ public static class MauiProgram
 		Plugin.Maui.Apptentive.Apptentive.Default.Register(configuration, completionHandler);
 =======
 		Apptentive.Default.Register(configuration, completionHandler);
+		
+		// Uncomment to set font name for iOS interactions.
         // ApptentiveKit.iOS.Apptentive.FontName = "AmericanTypewriter";
 >>>>>>> bdafdb6 (Move credentials to separate file)
 #elif __ANDROID__
