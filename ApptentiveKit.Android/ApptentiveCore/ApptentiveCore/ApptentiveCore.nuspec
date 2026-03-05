@@ -12,7 +12,7 @@
     <license type="expression">BSD-3-Clause</license>
     <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
      <dependencies>
-     <group targetFramework="net8.0-android34.0"></group>
+     <group targetFramework="net10.0-android34.0"></group>
      </dependencies>
   </metadata>
   <files>
