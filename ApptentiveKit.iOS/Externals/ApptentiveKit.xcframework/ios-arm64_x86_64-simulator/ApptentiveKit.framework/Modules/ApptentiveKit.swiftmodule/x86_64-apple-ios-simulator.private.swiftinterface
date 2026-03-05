@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+// swift-compiler-version: Apple Swift version 6.2.3 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name ApptentiveKit
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import CommonCrypto
 import CoreTelephony
 import CryptoKit
@@ -1008,7 +1008,7 @@ public class ApptentiveConfiguration : ObjectiveC.NSObject {
   @objc public var logLevel: ApptentiveKit.ApptentiveLogLevel
   @available(*, deprecated, message: "Logging now uses iOS's Unified Logging features so redaction of sensitive information is handled automatically.")
   @objc public var shouldSanitizeLogMessages: Swift.Bool
-  @objc public var baseURL: Foundation.URL?
+  @objc public var overrideBaseURL: Foundation.URL?
   @objc public var region: Swift.String?
   @available(swift, deprecated: 1.0, message: "Set the 'distributionName' property on 'Apptentive' directly before calling 'register(with:completion)'.")
   @objc public var distributionName: Swift.String?

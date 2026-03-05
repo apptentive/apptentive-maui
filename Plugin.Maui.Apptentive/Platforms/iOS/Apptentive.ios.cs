@@ -25,7 +25,7 @@ partial class ApptentiveImplementation: IApptentive
         iosConfiguration.DistributionName = Configuration.DistributionName;
         iosConfiguration.DistributionVersion = Configuration.DistributionVersion;
         iosConfiguration.Region = Configuration.Region;
-        iosConfiguration.OverrideBaseURL = Configuration.OverrideBaseURL;
+        iosConfiguration.OverrideBaseUrl = NSUrl.FromString(Configuration.OverrideBaseUrl);
 
         ApptentiveKit.iOS.Apptentive.Shared.Theme = UITheme.CustomerOnly;
 
