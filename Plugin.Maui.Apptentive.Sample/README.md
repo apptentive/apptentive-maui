@@ -28,21 +28,21 @@ following:
 
 ### ios
 
-`dotnet build -f:net8.0-ios -t:Run`
+`dotnet build -f:net10.0-ios -t:Run`
 
 You can also supply a device UDID (`xcrun simctl list` to show simulators):
 
-`dotnet build -f:net8.0-ios -t:Run /p:_DeviceName=:v2:udid=<UDID>`
+`dotnet build -f:net10.0-ios -t:Run /p:_DeviceName=:v2:udid=<UDID>`
 
 ### android
 
 debug: 
-`dotnet build -t:run -f:net8.0-android`
+`dotnet build -t:run -f:net10.0-android`
 
 with device
-`dotnet build -t:run -f:net8.0-android -t:Run /p:_DeviceName=<DEVICE NAME>`
+`dotnet build -t:run -f:net10.0-android -t:Run /p:_DeviceName=<DEVICE NAME>`
 
 where the device name would be found by running `adb devices` in the command line and all the active connected devices would be listed
 
 release: 
-`dotnet build -c Release -t:run -f:net8.0-android`
+`dotnet build -c Release -t:run -f:net10.0-android`
