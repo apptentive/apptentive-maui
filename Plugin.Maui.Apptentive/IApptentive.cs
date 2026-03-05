@@ -3,7 +3,7 @@ using System.IO;
 namespace Plugin.Maui.Apptentive;
 
 public partial interface IApptentive {
-    void Engage(string Event, Action<bool> onCompletion = null);
+    void Engage(string Event, Action<bool>? onCompletion = null);
 
     void CanShowInteraction(string Event, Action<bool> completion);
 
@@ -43,7 +43,7 @@ public partial interface IApptentive {
 
     void sendAttachmentFile(System.IO.Stream file, string MimeType);
 
-    void LogIn(string Token, Action<bool, string?> Completion);
+    void LogIn(string Token, Action<bool, string?>? Completion);
 
     void LogOut();
 

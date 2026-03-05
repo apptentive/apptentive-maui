@@ -35,7 +35,7 @@ namespace ApptentiveKit.iOS
 
 		// -(void)registerWithKey:(NSString * _Nonnull)key signature:(NSString * _Nonnull)signature completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("registerWithConfiguration:completion:")]
-		void Register(ApptentiveConfiguration configuration, [NullAllowed] Action<bool> completion);
+		void Register(ApptentiveConfiguration configuration, [NullAllowed] Action<bool>? completion);
 
 		// -(void)engage:(NSString * _Nonnull)event fromViewController:(UIViewController * _Nullable)viewController;
 		[Export("engage:fromViewController:")]
@@ -43,7 +43,7 @@ namespace ApptentiveKit.iOS
 
 		// -(void)engage:(NSString * _Nonnull)event fromViewController:(UIViewController * _Nullable)viewController completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("engage:fromViewController:completion:")]
-		void Engage(string @event, [NullAllowed] UIViewController viewController, [NullAllowed] Action<bool> completion);
+		void Engage(string @event, [NullAllowed] UIViewController viewController, [NullAllowed] Action<bool>? completion);
 
 		// -(void)engage:(NSString * _Nonnull)event withCustomData:(NSDictionary * _Nullable)customData fromViewController:(UIViewController * _Nullable)viewController;
 		[Export("engage:withCustomData:fromViewController:")]
@@ -51,13 +51,13 @@ namespace ApptentiveKit.iOS
 
 		// -(void)engage:(NSString * _Nonnull)event withCustomData:(NSDictionary * _Nullable)customData fromViewController:(UIViewController * _Nullable)viewController completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("engage:withCustomData:fromViewController:completion:")]
-		void Engage(string @event, [NullAllowed] NSDictionary customData, [NullAllowed] UIViewController viewController, [NullAllowed] Action<bool> completion);
+		void Engage(string @event, [NullAllowed] NSDictionary customData, [NullAllowed] UIViewController viewController, [NullAllowed] Action<bool>? completion);
 
 		// -(void)queryCanShowInteractionForEvent:(NSString * _Nonnull)event completion:(void (^ _Nonnull)(BOOL))completion;
 		[Export("queryCanShowInteractionForEvent:completion:")]
 		void QueryCanShowInteraction(string @event, Action<bool> completion);
 
-		// - (void)queryCanShowMessageCenterWithCompletion:(void (^ _Nonnull)(BOOL))completion SWIFT_DEPRECATED_MSG("This feature is not implemented and will always result in false.");
+		// - (void)queryCanShowMessageCenterWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 		[Export("queryCanShowMessageCenterWithCompletion:")]
 		void QueryCanShowMessageCenter(Action<bool> completion);
 
@@ -67,7 +67,7 @@ namespace ApptentiveKit.iOS
 
 		// -(void)presentMessageCenterFromViewController:(UIViewController * _Nullable)viewController completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("presentMessageCenterFromViewController:completion:")]
-		void PresentMessageCenter([NullAllowed] UIViewController viewController, [NullAllowed] Action<bool> completion);
+		void PresentMessageCenter([NullAllowed] UIViewController viewController, [NullAllowed] Action<bool>? completion);
 
 		// -(void)presentMessageCenterFromViewController:(UIViewController * _Nullable)viewController withCustomData:(NSDictionary * _Nullable)customData;
 		[Export("presentMessageCenterFromViewController:withCustomData:")]
@@ -75,7 +75,7 @@ namespace ApptentiveKit.iOS
 
 		// -(void)presentMessageCenterFromViewController:(UIViewController * _Nullable)viewController withCustomData:(NSDictionary * _Nullable)customData completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("presentMessageCenterFromViewController:withCustomData:completion:")]
-		void PresentMessageCenter([NullAllowed] UIViewController viewController, [NullAllowed] NSDictionary customData, [NullAllowed] Action<bool> completion);
+		void PresentMessageCenter([NullAllowed] UIViewController viewController, [NullAllowed] NSDictionary customData, [NullAllowed] Action<bool>? completion);
 
 		// @property (nonatomic) NSInteger unreadMessageCount;
 		[Export("unreadMessageCount")]
@@ -171,7 +171,7 @@ namespace ApptentiveKit.iOS
 
 		// - (void)logInWithToken:(NSString * _Nonnull)token completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 		[Export("logInWithToken:completion:")]
-		void LogIn(string token, Action<bool, NSError> completion);
+		void LogIn(string token, Action<bool, NSError>? completion);
 
 		// - (void)logOut;
 		[Export("logOut")]
@@ -179,7 +179,7 @@ namespace ApptentiveKit.iOS
 
 		// - (void)updateToken:(NSString * _Nonnull)token completion:(void (^ _Nullable)(BOOL))completion;
 		[Export("updateToken:completion:")]
-		void UpdateToken(string token, [NullAllowed] Action<bool> completion);
+		void UpdateToken(string token, [NullAllowed] Action<bool>? completion);
 
 		[NullAllowed, Export("authenticationFailureCallback")]
 		Action<ApptentiveAuthenticationFailureReason, string?> AuthenticationFailureCallback { get; set; }
