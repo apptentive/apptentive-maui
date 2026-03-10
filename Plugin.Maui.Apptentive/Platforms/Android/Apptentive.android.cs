@@ -13,19 +13,43 @@ partial class ApptentiveImplementation : IApptentive
 
   public event AuthenticationFailureHandler? AuthenticationFailed;
 
-  public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication Application)
-  {
-    var androidConfiguration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
-     androidConfiguration.DistributionVersion = Configuration.DistributionVersion;
-     androidConfiguration.DistributionName = Configuration.DistributionName;
-     androidConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
-     androidConfiguration.ShouldInheritAppTheme = Configuration.ShouldInheritAppTheme;
-     androidConfiguration.CustomAppStoreURL = Configuration.CustomAppStoreURL;
-     //TODO: Log Level is not reliably accessible.
-     ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
-  }
+    public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication Application)
+    {
+        var androidConfiguration = new ApptentiveSDK.ApptentiveConfiguration(Configuration.ApptentiveKey, Configuration.ApptentiveSignature);
+        androidConfiguration.DistributionVersion = Configuration.DistributionVersion;
+        androidConfiguration.DistributionName = Configuration.DistributionName;
+        androidConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
+        androidConfiguration.ShouldInheritAppTheme = Configuration.ShouldInheritAppTheme;
+        androidConfiguration.CustomAppStoreURL = Configuration.CustomAppStoreURL;
+        androidConfiguration.Region = ParseRegion(Configuration.Region);
 
-  public void Engage(string Event, Action<bool> onCompletion = null)
+        if (string.IsNullOrEmpty(Configuration.OverrideBaseUrl))
+        {
+            androidConfiguration.Region = ParseRegion(Configuration.Region);
+        }
+        else
+        {
+            androidConfiguration.Region = new ApptentiveSDK.ApptentiveRegion.Custom(Configuration.OverrideBaseUrl);
+        }
+
+        //TODO: Log Level is not reliably accessible.
+        ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
+    }
+
+    private static ApptentiveSDK.ApptentiveRegion ParseRegion(string input = null)
+    {
+        return input?.ToLowerInvariant() switch
+        {
+            "us" => ApptentiveSDK.ApptentiveRegion.US.Instance,
+            "eu" => ApptentiveSDK.ApptentiveRegion.EU.Instance,
+            "cn" => ApptentiveSDK.ApptentiveRegion.CN.Instance,
+            "au" => ApptentiveSDK.ApptentiveRegion.AU.Instance,
+            null => ApptentiveSDK.ApptentiveRegion.US.Instance,
+            _ => ApptentiveSDK.ApptentiveRegion.US.Instance
+        };
+    }
+
+    public void Engage(string Event, Action<bool>? onCompletion = null)
   {
     ApptentiveSDK.Apptentive.Engage(Event, null, new EngagementCallback(onCompletion));
   }
@@ -129,7 +153,7 @@ partial class ApptentiveImplementation : IApptentive
     ApptentiveSDK.Apptentive.SendAttachmentFile(File, MimeType);
   }
 
-  public void LogIn(string Token, Action<bool, string?> Completion) { }
+  public void LogIn(string Token, Action<bool, string?>? Completion) { }
 
   public void LogOut() { }
 
