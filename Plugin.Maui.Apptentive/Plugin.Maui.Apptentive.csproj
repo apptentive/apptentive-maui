@@ -52,7 +52,7 @@
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
 	 <PackageReference Include="ApptentiveFeedback" Version="7.0.0" />
         <!-- For development: -->
-		<ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" />
+        <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" />
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveCoreUI\ApptentiveCoreUI\ApptentiveCoreUI.csproj" />
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog.csproj" />
 	    <ProjectReference Include="..\ApptentiveKit.Android\ApptentiveInAppReview\ApptentiveInAppReview\ApptentiveInAppReview.csproj" />
