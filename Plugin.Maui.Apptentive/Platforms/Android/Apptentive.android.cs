@@ -36,7 +36,7 @@ partial class ApptentiveImplementation : IApptentive
         ApptentiveSDK.Apptentive.Register(Application, androidConfiguration, Completion);
     }
 
-    private static ApptentiveSDK.ApptentiveRegion ParseRegion(string input = null)
+    private static ApptentiveSDK.ApptentiveRegion ParseRegion(string? input = null)
     {
         return input?.ToLowerInvariant() switch
         {
