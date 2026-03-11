@@ -41,5 +41,6 @@
     <attr path="/api/package[@name='apptentive.com.android.feedback']/class[@name='Apptentive']/method[@name='canShowInteraction' and count(parameter)=1 and parameter[1][@type='java.lang.String']]" name="visibility">internal</attr>
    
     <attr path="/api/package[@name='apptentive.com.android.feedback']" name="managedName">ApptentiveSDK</attr>
+    <attr path="/api/package[@name='apptentive.com.android.feedback.engagement']/class[@name='EngagementContextProvider']/method[@name='get' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
 
 </metadata>
