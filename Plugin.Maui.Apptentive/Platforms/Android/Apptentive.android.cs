@@ -9,9 +9,10 @@ public partial interface IApptentive {
 
 partial class ApptentiveImplementation : IApptentive
 {
+#pragma warning disable CS0067 // Events required by IApptentive interface but not yet raised on Android
   public event EventNotificationHandler? EventEngaged;
-
   public event AuthenticationFailureHandler? AuthenticationFailed;
+#pragma warning restore CS0067
 
     public void Register(Configuration Configuration, Action<bool> Completion, MauiApplication Application)
     {
