@@ -10,5 +10,6 @@
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
+  <PackageReference Include="Xamarin.Kotlin.StdLib" Version="2.2.0.1" />
 </ItemGroup>
 </Project>
