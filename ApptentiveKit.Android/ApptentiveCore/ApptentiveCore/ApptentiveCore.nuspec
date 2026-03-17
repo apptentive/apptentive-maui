@@ -2,7 +2,7 @@
   <metadata>
     <id>ApptentiveCore</id>
     <title>ApptentiveCore for Maui Android</title>
-    <version>6.9.0</version>
+    <version>7.0.0</version>
     <authors>Apptentive</authors>
     <owners>Apptentive</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,12 +12,12 @@
     <license type="expression">BSD-3-Clause</license>
     <iconUrl>https://raw.githubusercontent.com/apptentive/apptentive-maui/main/icon.png</iconUrl>
      <dependencies>
-     <group targetFramework="net8.0-android34.0"></group>
+     <group targetFramework="net10.0-android35.0"></group>
      </dependencies>
   </metadata>
   <files>
-    <file src="../ApptentiveCore/bin/Release/net8.0-android/ApptentiveCore.dll" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveCore/bin/Release/net8.0-android/ApptentiveCore.xml" target="lib/net8.0-android34.0/"/>
-    <file src="../ApptentiveCore/bin/Release/net8.0-android/apptentive-core-6.9.0.aar" target="lib/net8.0-android34.0/"/>
+    <file src="../ApptentiveCore/bin/Release/net10.0-android/ApptentiveCore.dll" target="lib/net10.0-android35.0/"/>
+    <file src="../ApptentiveCore/bin/Release/net10.0-android/ApptentiveCore.xml" target="lib/net10.0-android35.0/"/>
+    <file src="../ApptentiveCore/bin/Release/net10.0-android/apptentive-core-7.0.0.aar" target="lib/net10.0-android35.0/"/>
   </files>
 </package>

@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0-android</TargetFramework>
-    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <TargetFramework>net10.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-     <Version>6.9.0</Version>
+     <Version>7.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Additions\" />
@@ -26,20 +26,31 @@
     <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review" Version="2.0.1.7" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
-    <PackageReference Include="ApptentiveMessageCenter" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveRatings" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveNotes" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveSurvey" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveEnjoymentDialog" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveNavigateToLink" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveInAppReview" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveInitiator" Version="1.0.0"/>
-    <PackageReference Include="ApptentiveCoreUI" Version="6.9.0"/>
-    <PackageReference Include="ApptentiveCore" Version="6.9.0"/>
-    <!-- TODO: update the version to 6.9.0 and add the initiator packages as -->
+    <PackageReference Include="ApptentiveMessageCenter" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveRatings" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveNotes" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveSurvey" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveEnjoymentDialog" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveNavigateToLink" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveInAppReview" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveInitiator" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveCoreUI" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveCore" Version="7.0.0"/>
+
+    <!-- Dev options to work with the local changes	   -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveCoreUI\ApptentiveCoreUI\ApptentiveCoreUI.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog\ApptentiveEnjoymentDialog.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveInAppReview\ApptentiveInAppReview\ApptentiveInAppReview.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveMessageCenter\ApptentiveMessageCenter\ApptentiveMessageCenter.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveNavigateToLink\ApptentiveNavigateToLink\ApptentiveNavigateToLink.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveNotes\ApptentiveNotes\ApptentiveNotes.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveRatings\ApptentiveRatings\ApptentiveRatings.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveSurvey\ApptentiveSurvey\ApptentiveSurvey.csproj" /> -->
+<!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveInitiator\ApptentiveInitiator\ApptentiveInitiator.csproj" /> -->
   </ItemGroup>
 <ItemGroup>
-  <AndroidLibrary Update="apptentive-feedback-6.9.0.aar">
+  <AndroidLibrary Update="apptentive-feedback-7.0.0.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
