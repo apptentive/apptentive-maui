@@ -18,6 +18,8 @@ public class Configuration
     public bool ShouldInheritAppTheme;
     public long RatingInteractionThrottleLength;
     public string? CustomAppStoreURL;
+    public string? Region;
+    public string? OverrideBaseUrl;
 
     public Configuration(string ApptentiveKey, string ApptentiveSignature)
     {
