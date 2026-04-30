@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Plugin.Maui.Apptentive</id>
-    <version>7.0.0</version>
+    <version>7.1.1</version>
     <title>ApptentiveKit plugin for Maui</title>
     <authors>Apptentive</authors>
     <owners>Apptentive</owners>
@@ -15,7 +15,7 @@
     <tags>Apptentive Alchemer</tags>
     <dependencies>
     <group targetFramework="net10.0-android35.0">
-    <dependency id="ApptentiveFeedback" version="7.0.0"/>
+    <dependency id="ApptentiveFeedback" version="7.1.1"/>
     </group>
     <group targetFramework="net10.0-ios26.0">
     <dependency id="Apptentive.iOS" version="7.0.0"/>

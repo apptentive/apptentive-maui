@@ -4,7 +4,7 @@
     <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-     <Version>7.0.0</Version>
+     <Version>7.1.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Additions\" />
@@ -26,16 +26,16 @@
     <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review" Version="2.0.1.7" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
-    <PackageReference Include="ApptentiveMessageCenter" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveRatings" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveNotes" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveSurvey" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveEnjoymentDialog" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveNavigateToLink" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveInAppReview" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveInitiator" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveCoreUI" Version="7.0.0"/>
-    <PackageReference Include="ApptentiveCore" Version="7.0.0"/>
+    <PackageReference Include="ApptentiveMessageCenter" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveRatings" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveNotes" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveSurvey" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveEnjoymentDialog" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveNavigateToLink" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveInAppReview" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveInitiator" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveCoreUI" Version="7.1.1"/>
+    <PackageReference Include="ApptentiveCore" Version="7.1.1"/>
 
     <!-- Dev options to work with the local changes	   -->
 <!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveCore\ApptentiveCore\ApptentiveCore.csproj" /> -->
@@ -50,7 +50,7 @@
 <!--     <ProjectReference Include="..\..\..\ApptentiveKit.Android\ApptentiveInitiator\ApptentiveInitiator\ApptentiveInitiator.csproj" /> -->
   </ItemGroup>
 <ItemGroup>
-  <AndroidLibrary Update="apptentive-feedback-7.0.0.aar">
+  <AndroidLibrary Update="apptentive-feedback-7.1.1.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>

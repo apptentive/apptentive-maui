@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0-android</TargetFramework>
-	<Version>7.0.0</Version>
+	<Version>7.1.1</Version>
     <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -10,7 +10,7 @@
     <PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.4.10" />
   </ItemGroup>
   <ItemGroup>
-  <AndroidLibrary Update="apptentive-notes-7.0.0.aar">
+  <AndroidLibrary Update="apptentive-notes-7.1.1.aar">
     <Bind>true</Bind>
     <Pack>true</Pack>
   </AndroidLibrary>
