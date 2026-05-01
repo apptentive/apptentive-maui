@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build -f:net10.0-android 2>&1 | grep -v \"JavaAppletPlugin\\\\|java_home\" | grep -i \"warn\\\\|CS[0-9]\" | head -100)"
+    ]
+  }
+}

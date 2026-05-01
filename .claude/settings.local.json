@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(xcrun simctl *)",
+      "Bash(grep -v \"^$\")",
+      "Bash(dotnet build *)",
+      "Bash(dotnet run *)",
+      "Bash(dotnet --version)",
+      "Bash(dotnet workload *)"
+    ]
+  }
+}

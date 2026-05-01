@@ -24,7 +24,7 @@ partial class ApptentiveImplementation: IApptentive
         iosConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
         iosConfiguration.DistributionName = Configuration.DistributionName;
         iosConfiguration.DistributionVersion = Configuration.DistributionVersion;
-        iosConfiguration.Region = Configuration.Region;
+        iosConfiguration.Region = Configuration.Region?.ToLowerInvariant();
         iosConfiguration.OverrideBaseUrl = NSUrl.FromString(Configuration.OverrideBaseUrl);
 
         ApptentiveKit.iOS.Apptentive.Shared.Theme = UITheme.CustomerOnly;

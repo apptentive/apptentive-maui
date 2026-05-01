@@ -89,7 +89,8 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
-		<PackageReference Include="Apptentive.iOS" Version="6.9.0" />
+		<ProjectReference Include="..\ApptentiveKit.iOS\ApptentiveKit.iOS.csproj" />
+		<!-- <PackageReference Include="Apptentive.iOS" Version="7.1.0" /> -->
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
 	  <PackageReference Include="Xamarin.GooglePlayServices.Base" Version="118.2.0.6" />
