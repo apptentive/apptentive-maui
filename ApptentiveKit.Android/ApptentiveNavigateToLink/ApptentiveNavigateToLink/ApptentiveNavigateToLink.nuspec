@@ -2,7 +2,7 @@
   <metadata>
     <id>ApptentiveNavigateToLink</id>
     <title>ApptentiveNavigateToLink for Maui Android</title>
-    <version>7.0.0</version>
+    <version>7.1.1</version>
     <authors>Apptentive</authors>
     <owners>Apptentive</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -18,6 +18,6 @@
   <files>
     <file src="../ApptentiveNavigateToLink/bin/Release/net10.0-android/ApptentiveNavigateToLink.dll" target="lib/net10.0-android35.0/"/>
     <file src="../ApptentiveNavigateToLink/bin/Release/net10.0-android/ApptentiveNavigateToLink.xml" target="lib/net10.0-android35.0/"/>
-    <file src="../ApptentiveNavigateToLink/bin/Release/net10.0-android/apptentive-navigate-to-link-7.0.0.aar" target="lib/net10.0-android35.0/"/>
+    <file src="../ApptentiveNavigateToLink/bin/Release/net10.0-android/apptentive-navigate-to-link-7.1.1.aar" target="lib/net10.0-android35.0/"/>
   </files>
 </package>

@@ -44,7 +44,7 @@ partial class ApptentiveImplementation : IApptentive
         {
             "us" => ApptentiveSDK.ApptentiveRegion.US.Instance,
             "eu" => ApptentiveSDK.ApptentiveRegion.EU.Instance,
-            "cn" => ApptentiveSDK.ApptentiveRegion.CN.Instance,
+            "ca" => ApptentiveSDK.ApptentiveRegion.CA.Instance,
             "au" => ApptentiveSDK.ApptentiveRegion.AU.Instance,
             null => ApptentiveSDK.ApptentiveRegion.US.Instance,
             _ => ApptentiveSDK.ApptentiveRegion.US.Instance
