@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net10.0-android;net10.0-ios</TargetFrameworks>
+		<!-- Uncomment to also build the windows app. -->
+        <!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks> -->
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -10,6 +11,7 @@
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
 		<ApplicationTitle>Apptentive Maui Sample</ApplicationTitle>
@@ -25,15 +27,15 @@
 		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">13.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
 		<ReleaseVersion>6.7</ReleaseVersion>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-android|AnyCPU'">
      	<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 		<EnableLLVM>true</EnableLLVM>
     </PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android|AnyCPU'">
 	    <DebugSymbols>True</DebugSymbols>
 		<DebugType>portable</DebugType>
 		<Optimize>True</Optimize>
@@ -56,7 +58,7 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
@@ -75,28 +77,32 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+
+		<EmbeddedResource Include="appsettings.Secret.json" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Plugin.Maui.Apptentive\Plugin.Maui.Apptentive.csproj" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.20" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
-		<PackageReference Include="Apptentive.iOS" Version="6.8.1" />
+	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
+		<PackageReference Include="Apptentive.iOS" Version="6.9.0" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
 	  <PackageReference Include="Xamarin.GooglePlayServices.Base" Version="118.2.0.6" />
 	  <PackageReference Include="Xamarin.Google.Android.Play.Review" Version="2.0.1.7" />
 	  <PackageReference Include ="Xamarin.Google.Android.Play.Review.Ktx" Version="2.0.1.7"/>
-	  <PackageReference Include="Xamarin.Google.Android.Material"  Version="1.10.0.3" />
-	  <PackageReference Include="GoogleGson" Version="2.10.1.8"/>
+	  <PackageReference Include="Xamarin.Google.Android.Material"  Version="1.12.0.5" />
+	  <PackageReference Include="GoogleGson" Version="2.13.1.1"/>
 	  <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0.23"/>
-	  <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.2.2"/>
-	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx"  Version="1.6.2.2"/>
-	  <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.7"/>
-	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.7.0.1"/>
-	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.7.0.1"/>
+	  <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.8.8.1"/>
+	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx"  Version="1.8.8.1"/>
+	  <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.1.1"/>
+	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.9.2.1"/>
+	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.9.2.1"/>
 	</ItemGroup>
 	<ItemGroup>
     <ProguardConfiguration Include="proguard.cfg" />

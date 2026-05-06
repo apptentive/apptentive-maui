@@ -14,7 +14,7 @@ partial class ApptentiveImplementation: IApptentive
 
     public event AuthenticationFailureHandler? AuthenticationFailed;
 
-    public void Register(Configuration Configuration, Action<bool> completion)
+    public void Register(Configuration Configuration, Action<bool>? completion)
     {
         NSNotificationCenter.DefaultCenter.AddObserver(new NSString("com.apptentive.apptentiveEventEngaged"), HandleEventEngaged, null);
         ApptentiveKit.iOS.Apptentive.Shared.AuthenticationFailureCallback = HandleAuthenticationFailed;
@@ -24,17 +24,19 @@ partial class ApptentiveImplementation: IApptentive
         iosConfiguration.ShouldSanitizeLogMessages = Configuration.ShouldSanitizeLogMessages;
         iosConfiguration.DistributionName = Configuration.DistributionName;
         iosConfiguration.DistributionVersion = Configuration.DistributionVersion;
+        iosConfiguration.Region = Configuration.Region;
+        iosConfiguration.OverrideBaseUrl = NSUrl.FromString(Configuration.OverrideBaseUrl);
 
-        ApptentiveKit.iOS.Apptentive.Shared.Theme = UITheme.None;
+        ApptentiveKit.iOS.Apptentive.Shared.Theme = UITheme.CustomerOnly;
 
 		ApptentiveKit.iOS.Apptentive.Shared.Register(iosConfiguration, completion);
     }
 
-    public void Engage(string Event, Action<bool> completion = null) {
+    public void Engage(string Event, Action<bool>? completion = null) {
         ApptentiveKit.iOS.Apptentive.Shared.Engage(Event, null, completion);
     }
 
-    public void CanShowInteraction(string Event, Action<bool> completion = null) {
+    public void CanShowInteraction(string Event, Action<bool> completion) {
         ApptentiveKit.iOS.Apptentive.Shared.QueryCanShowInteraction(Event, (bool result) => completion(result));
     }
 
@@ -117,8 +119,8 @@ partial class ApptentiveImplementation: IApptentive
         }
     }
 
-    public void LogIn(string Token, Action<bool, string?> Completion) {
-        ApptentiveKit.iOS.Apptentive.Shared.LogIn(Token, (bool Success, NSError Error) => Completion(Success, Error?.LocalizedDescription) );
+    public void LogIn(string Token, Action<bool, string?>? Completion) {
+        ApptentiveKit.iOS.Apptentive.Shared.LogIn(Token, (bool Success, NSError Error) => Completion?.Invoke(Success, Error?.LocalizedDescription) );
     }
 
     public void LogOut() {
@@ -132,10 +134,10 @@ partial class ApptentiveImplementation: IApptentive
     private void HandleEventEngaged(NSNotification notification)
     {
         if (EventEngaged != null) {
-            string? name = notification.UserInfo.ValueForKey(new NSString("eventType"))?.ToString();
-            string? type = notification.UserInfo.ValueForKey(new NSString("interactionType"))?.ToString();
-            string? id = notification.UserInfo.ValueForKey(new NSString("interactionID"))?.ToString();
-            string? source = notification.UserInfo.ValueForKey(new NSString("eventSource"))?.ToString();
+            string? name = notification.UserInfo?.ValueForKey(new NSString("eventType"))?.ToString();
+            string? type = notification.UserInfo?.ValueForKey(new NSString("interactionType"))?.ToString();
+            string? id = notification.UserInfo?.ValueForKey(new NSString("interactionID"))?.ToString();
+            string? source = notification.UserInfo?.ValueForKey(new NSString("eventSource"))?.ToString();
 
             EventEngaged?.Invoke(name, type, id, source);
         }   

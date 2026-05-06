@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-android</TargetFramework>
+	<Version>7.1.1</Version>
+    <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+  <AndroidLibrary Update="apptentive-initiator-7.1.1.aar">
+    <Bind>true</Bind>
+    <Pack>true</Pack>
+  </AndroidLibrary>
+</ItemGroup>
+</Project>
